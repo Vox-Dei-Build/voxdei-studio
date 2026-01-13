@@ -4,8 +4,8 @@ export function StructuredData() {
     "@type": "Organization",
     name: "Vox Dei Studio",
     alternateName: "Vox Dei",
-    url: "https://www.voxdei.studio",
-    logo: "https://www.voxdei.studio/logo-v.png",
+    url: "https://studio.voxdei.io",
+    logo: "https://studio.voxdei.io/logo-v.png",
     description:
       "AI Venture Studio building AI-enabled products, platforms, and modern systems — fast. We partner with enterprises and startups to design, build, and ship production-grade software.",
     foundingDate: "2014",
@@ -88,25 +88,25 @@ export function StructuredData() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.voxdei.studio",
+        item: "https://studio.voxdei.io",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Portfolio",
-        item: "https://www.voxdei.studio/#portfolio",
+        item: "https://studio.voxdei.io/#portfolio",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "About",
-        item: "https://www.voxdei.studio/#about",
+        item: "https://studio.voxdei.io/#about",
       },
       {
         "@type": "ListItem",
         position: 4,
         name: "Contact",
-        item: "https://www.voxdei.studio/#contact",
+        item: "https://studio.voxdei.io/#contact",
       },
     ],
   }
@@ -115,7 +115,7 @@ export function StructuredData() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Vox Dei Studio",
-    url: "https://www.voxdei.studio",
+    url: "https://studio.voxdei.io",
     description:
       "AI Venture Studio building AI-enabled products, platforms, and modern systems — fast.",
     publisher: {

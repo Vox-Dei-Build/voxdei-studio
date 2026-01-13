@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/admin/"],
     },
-    sitemap: "https://www.voxdei.studio/sitemap.xml",
+    sitemap: "https://studio.voxdei.io/sitemap.xml",
   }
 }

@@ -8,7 +8,7 @@ import "./globals.css"
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
-const siteUrl = "https://www.voxdei.studio"
+const siteUrl = "https://studio.voxdei.io"
 const siteName = "Vox Dei Studio"
 const siteDescription =
   "AI Venture Studio building AI-enabled products, platforms, and modern systems — fast. We partner with enterprises and startups to design, build, and ship production-grade software."
