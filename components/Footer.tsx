@@ -1,25 +1,92 @@
-import Button from "./ui/Button";
+import Link from "next/link";
 
-export default function Footer() {
+export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer id="contact" className="bg-gray-900 text-white py-16 md:py-20">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-          Let&apos;s Build Something
-        </h2>
-        <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-          Whether you&apos;re launching a new product or modernizing an existing
-          system, we can help.
-        </p>
-        <div className="flex flex-wrap gap-4 justify-center mb-12">
-          <Button href="mailto:hello@voxdei.io">Get in Touch</Button>
-          <Button href="[ADD LINK HERE]" variant="secondary">
-            LinkedIn
-          </Button>
+    <footer className="border-t border-border py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div className="md:col-span-2">
+            <h3 className="text-lg font-semibold mb-3">Vox Dei Studio</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
+              Building AI-enabled products, enterprise platforms, and digital
+              experiences - fast.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-3">Navigation</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>
+                <a
+                  href="#portfolio"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Work
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#capabilities"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Capabilities
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  className="hover:text-foreground transition-colors"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-3">Contact</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>
+                <a
+                  href="mailto:hello@voxdei.io"
+                  className="hover:text-foreground transition-colors"
+                >
+                  hello@voxdei.io
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <p className="text-sm text-gray-400">
-          © 2026 Vox Dei Studio. All rights reserved.
-        </p>
+
+        <div className="pt-8 border-t border-border">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+            <p>© {currentYear} Vox Dei Studio. All rights reserved.</p>
+            <div className="flex gap-6">
+              <Link
+                href="/privacy"
+                className="hover:text-foreground transition-colors"
+              >
+                Privacy
+              </Link>
+              <Link
+                href="/terms"
+                className="hover:text-foreground transition-colors"
+              >
+                Terms
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );
