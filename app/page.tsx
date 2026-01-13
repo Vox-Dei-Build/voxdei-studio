@@ -1,23 +1,33 @@
-import Hero from "@/components/Hero";
-import WhatWeDo from "@/components/WhatWeDo";
-import Capabilities from "@/components/Capabilities";
-import Portfolio from "@/components/Portfolio";
-import CaseStudies from "@/components/CaseStudies";
-import Studio from "@/components/Studio";
-import WhyUs from "@/components/WhyUs";
-import Footer from "@/components/Footer";
+import { PortfolioHeader } from "@/components/portfolio-header"
+import { HeroSection } from "@/components/hero-section"
+import { CapabilitiesSection } from "@/components/capabilities-section"
+import { PortfolioGrid } from "@/components/portfolio-grid"
+import { PartnersSection } from "@/components/partners-section"
+import { FeaturedPartnersSection } from "@/components/featured-partners-section"
+import { TestimonialsSection } from "@/components/testimonials-section"
+import { AboutSection } from "@/components/about-section"
+import { ContactSection } from "@/components/contact-section"
+import { Footer } from "@/components/footer"
+import { FounderSection } from "@/components/founder-section"
+import { StructuredData } from "@/components/structured-data"
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <WhatWeDo />
-      <Capabilities />
-      <Portfolio />
-      <CaseStudies />
-      <Studio />
-      <WhyUs />
-      <Footer />
-    </main>
-  );
+    <>
+      <StructuredData />
+      <main className="min-h-screen">
+        <PortfolioHeader />
+        <HeroSection />
+        <CapabilitiesSection />
+        <PortfolioGrid />
+        <PartnersSection />
+        <FeaturedPartnersSection />
+        <TestimonialsSection />
+        <AboutSection />
+        <FounderSection />
+        <ContactSection />
+        <Footer />
+      </main>
+    </>
+  )
 }
