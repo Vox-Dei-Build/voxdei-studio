@@ -6,11 +6,11 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export function HeroSection() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 lg:pt-48 lg:pb-40">
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 lg:pt-48 lg:pb-40 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Lottie Animation - Mobile First */}
-          <div className="w-full mx-auto lg:hidden scale-[2] md:scale-[2] -mt-8">
+          <div className="w-full mx-auto lg:hidden scale-[1.8] md:scale-[2] -mt-8">
             <DotLottieReact
               src="https://lottie.host/4824b1a4-5719-495a-9b2e-ac5633134c63/KgCmtKkSfD.lottie"
               loop
