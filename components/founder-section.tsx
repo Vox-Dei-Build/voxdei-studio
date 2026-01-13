@@ -10,7 +10,7 @@ export function FounderSection() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
             {/* Profile Image Column */}
             <div className="lg:col-span-2">
-              <div className="relative aspect-[3/4] w-full max-w-md mx-auto overflow-hidden rounded-2xl">
+              <div className="relative aspect-4/5 lg:aspect-3/4 w-full max-w-md mx-auto overflow-hidden rounded-2xl">
                 <Image
                   src="/images/061-20240608.jpg"
                   alt="Tsepo Ntsaba, CEO and Founder of Vox Dei Studios"

@@ -9,6 +9,15 @@ export function HeroSection() {
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 lg:pt-48 lg:pb-40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Lottie Animation - Mobile First */}
+          <div className="w-full mx-auto lg:hidden scale-[2] md:scale-[2] -mt-8">
+            <DotLottieReact
+              src="https://lottie.host/4824b1a4-5719-495a-9b2e-ac5633134c63/KgCmtKkSfD.lottie"
+              loop
+              autoplay
+            />
+          </div>
+
           {/* Content */}
           <div>
             <div className="mb-6">
@@ -44,8 +53,8 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Lottie Animation */}
-          <div className="w-full mx-auto lg:w-full xl:w-full scale-150 lg:scale-[2] xl:scale-[2.5]">
+          {/* Lottie Animation - Desktop Only */}
+          <div className="hidden lg:block w-full mx-auto lg:w-full xl:w-full md:scale-[2] lg:scale-[2.5] xl:scale-[2.5]">
             <DotLottieReact
               src="https://lottie.host/4824b1a4-5719-495a-9b2e-ac5633134c63/KgCmtKkSfD.lottie"
               loop

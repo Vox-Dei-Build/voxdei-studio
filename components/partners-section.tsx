@@ -45,14 +45,14 @@ export function PartnersSection() {
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 mx-16 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+                className="flex-shrink-0 mx-8 md:mx-16 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
               >
-                <div className="relative w-24 h-24 flex items-center justify-center">
+                <div className="relative w-16 h-16 md:w-24 md:h-24 flex items-center justify-center">
                   <Image
                     src={partner.logo}
                     alt={partner.name}
                     fill
-                    className="object-contain max-w-20 max-h-20"
+                    className="object-contain max-w-14 max-h-14 md:max-w-20 md:max-h-20"
                   />
                 </div>
               </a>
@@ -64,14 +64,14 @@ export function PartnersSection() {
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 mx-16 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+                className="flex-shrink-0 mx-8 md:mx-16 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
               >
-                <div className="relative w-24 h-24 flex items-center justify-center">
+                <div className="relative w-16 h-16 md:w-24 md:h-24 flex items-center justify-center">
                   <Image
                     src={partner.logo}
                     alt={partner.name}
                     fill
-                    className="object-contain max-w-20 max-h-20"
+                    className="object-contain max-w-14 max-h-14 md:max-w-20 md:max-h-20"
                   />
                 </div>
               </a>
@@ -91,7 +91,7 @@ export function PartnersSection() {
         }
 
         .animate-scroll {
-          animation: scroll 40s linear infinite;
+          animation: scroll 20s linear infinite;
         }
 
         .animate-scroll:hover {

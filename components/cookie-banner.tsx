@@ -32,21 +32,21 @@ export function CookieBanner() {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 animate-in slide-in-from-bottom duration-300">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-3 sm:p-6 animate-in slide-in-from-bottom duration-300">
       <div className="container mx-auto max-w-6xl">
         <div className="relative bg-background border border-border rounded-lg shadow-lg p-4 sm:p-6">
           <button
             onClick={declineCookies}
-            className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 text-muted-foreground hover:text-foreground transition-colors"
             aria-label="Close cookie banner"
           >
-            <X className="h-4 w-4" />
+            <X className="h-5 w-5 sm:h-4 sm:w-4" />
           </button>
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pr-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pr-10 sm:pr-8">
             <div className="flex-1">
-              <h3 className="text-sm font-semibold mb-2">Cookie Notice</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <h3 className="text-base sm:text-sm font-semibold mb-2">Cookie Notice</h3>
+              <p className="text-sm sm:text-sm text-muted-foreground leading-relaxed">
                 We use cookies to enhance your browsing experience, analyze site
                 traffic, and personalize content. By clicking "Accept", you
                 consent to our use of cookies.{" "}
@@ -59,15 +59,15 @@ export function CookieBanner() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto sm:shrink-0">
               <Button
                 variant="outline"
                 onClick={declineCookies}
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto min-w-25"
               >
                 Decline
               </Button>
-              <Button onClick={acceptCookies} className="w-full sm:w-auto">
+              <Button onClick={acceptCookies} className="w-full sm:w-auto min-w-25">
                 Accept
               </Button>
             </div>
