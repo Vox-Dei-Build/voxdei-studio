@@ -34,12 +34,12 @@ const featuredPartners = [
 
 export function FeaturedPartnersSection() {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-background" aria-label="Strategic ecosystem partnerships">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Strategic Partners</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Strategic Ecosystem Partners</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Collaborating with ecosystem leaders to build transformative ventures
+            Collaborating with ecosystem leaders to build transformative ventures and support the next generation of founders
           </p>
         </div>
 
@@ -49,18 +49,20 @@ export function FeaturedPartnersSection() {
               key={partner.name}
               className="group hover:border-accent transition-all duration-300 cursor-pointer flex flex-col"
               onClick={() => window.open(partner.url, "_blank")}
+              role="article"
+              aria-label={`${partner.name} partnership details`}
             >
               <CardContent className="p-8 flex flex-col flex-grow">
                 <div className="flex items-start justify-between mb-6">
                   <div className={`relative h-16 w-32 flex items-center rounded-md px-3 ${partner.logoBg || ""}`}>
                     <Image
                       src={partner.logo}
-                      alt={partner.name}
+                      alt={`${partner.name} - Strategic partner logo`}
                       fill
                       className="object-contain object-left p-2"
                     />
                   </div>
-                  <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                  <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" aria-hidden="true" />
                 </div>
 
                 <h3 className="text-xl font-semibold mb-3">{partner.name}</h3>

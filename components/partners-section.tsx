@@ -26,12 +26,12 @@ const partners = [
 
 export function PartnersSection() {
   return (
-    <section className="py-16 bg-muted/30">
+    <section id="partners" className="py-16 bg-muted/30" aria-label="Trusted partners and clients">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted By</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted By Leading Brands</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Proud to have partnered with leading brands and organizations
+            Proud to have partnered with industry-leading brands and organizations across fintech, healthcare, e-commerce, and enterprise software
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export function PartnersSection() {
                 <div className="relative w-16 h-16 md:w-24 md:h-24 flex items-center justify-center">
                   <Image
                     src={partner.logo}
-                    alt={partner.name}
+                    alt={`${partner.name} logo - trusted partner of Vox Dei Studio`}
                     fill
                     className="object-contain max-w-14 max-h-14 md:max-w-20 md:max-h-20"
                   />
@@ -69,7 +69,7 @@ export function PartnersSection() {
                 <div className="relative w-16 h-16 md:w-24 md:h-24 flex items-center justify-center">
                   <Image
                     src={partner.logo}
-                    alt={partner.name}
+                    alt={`${partner.name} logo - trusted partner of Vox Dei Studio`}
                     fill
                     className="object-contain max-w-14 max-h-14 md:max-w-20 md:max-h-20"
                   />

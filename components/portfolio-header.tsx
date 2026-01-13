@@ -10,6 +10,7 @@ export function PortfolioHeader() {
   const navItems = [
     { name: "Capabilities", href: "#capabilities" },
     { name: "Work", href: "#portfolio" },
+    { name: "Partners", href: "#partners" },
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
   ]
