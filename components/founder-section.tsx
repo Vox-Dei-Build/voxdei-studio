@@ -7,19 +7,25 @@ export function FounderSection() {
     <section id="founder" className="py-20 md:py-32 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
-            {/* Profile Image Column */}
-            <div className="lg:col-span-2">
-              <div className="relative aspect-4/5 lg:aspect-3/4 w-full max-w-md mx-auto overflow-hidden rounded-2xl">
+          <div className="space-y-8">
+            {/* Header with Avatar */}
+            <div className="flex flex-col items-center justify-center gap-6">
+              {/* Avatar */}
+              <div className="relative w-32 h-32 rounded-full overflow-hidden shrink-0">
                 <Image
                   src="/images/061-20240608.jpg"
                   alt="Tsepo Ntsaba, CEO and Founder of Vox Dei Studios"
                   fill
-                  className="object-cover"
+                  className="object-cover object-[center_30%]"
                   priority
                 />
               </div>
-              <div className="mt-6 text-center">
+
+              {/* Name and Title */}
+              <div className="text-center">
+                <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground mb-2">
+                  Meet the Founder
+                </h2>
                 <h3 className="text-2xl font-semibold mb-1">Tsepo Ntsaba</h3>
                 <p className="text-muted-foreground mb-4">CEO and Founder</p>
                 <Button variant="outline" size="sm" asChild>
@@ -36,13 +42,8 @@ export function FounderSection() {
               </div>
             </div>
 
-            {/* Bio Content Column */}
-            <div className="lg:col-span-3 space-y-6 text-muted-foreground leading-relaxed">
-              <div>
-                <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground mb-8">
-                  Meet the Founder
-                </h2>
-              </div>
+            {/* Bio Content */}
+            <div className="space-y-6 text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto">
 
               <p>
                 Tsepo's mission is simple: to glorify Christ by being a voice that inspires faith and empowers
