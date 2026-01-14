@@ -45,9 +45,9 @@ export function HeroSection() {
           </div>
 
           {/* Lottie Animation - Desktop Only */}
-          <div className="hidden lg:block w-full mx-auto lg:w-full xl:w-full md:scale-[2] lg:scale-[2.5] xl:scale-[2.5]">
+          <div className="hidden lg:block w-full mx-auto lg:w-full xl:w-full md:scale-[1.4] lg:scale-[1.4] xl:scale-[1.8]">
             <DotLottieReact
-              src="https://lottie.host/4824b1a4-5719-495a-9b2e-ac5633134c63/KgCmtKkSfD.lottie"
+              src="https://lottie.host/899ba899-d6a0-48ad-9063-f945685cf7b4/I8cLnlQt74.lottie"
               loop
               autoplay
             />
