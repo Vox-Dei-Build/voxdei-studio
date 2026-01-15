@@ -36,6 +36,14 @@ export function Footer() {
               </li>
               <li>
                 <a
+                  href="#partners"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Partners
+                </a>
+              </li>
+              <li>
+                <a
                   href="#about"
                   className="hover:text-foreground transition-colors"
                 >
@@ -48,6 +56,16 @@ export function Footer() {
                   className="hover:text-foreground transition-colors"
                 >
                   Contact
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.voxdei.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Thoughts
                 </a>
               </li>
             </ul>

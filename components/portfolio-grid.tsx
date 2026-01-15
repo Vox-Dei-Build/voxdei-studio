@@ -1,9 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Globe } from "lucide-react";
 import Image from "next/image";
+
+const tabs = [
+  { id: "all", label: "All" },
+  { id: "enterprise", label: "Enterprise" },
+  { id: "ventures", label: "Venture Builds" },
+  { id: "digital", label: "Digital Products" },
+] as const;
+
+type TabId = (typeof tabs)[number]["id"];
 
 const projectCategories = [
   {
@@ -314,6 +324,29 @@ const projectCategories = [
 ];
 
 export function PortfolioGrid() {
+  const [activeTab, setActiveTab] = useState<TabId>("all");
+
+  const getFilteredCategories = () => {
+    switch (activeTab) {
+      case "enterprise":
+        return projectCategories.filter((c) =>
+          c.name.includes("Enterprise")
+        );
+      case "ventures":
+        return projectCategories.filter((c) =>
+          c.name.includes("Venture")
+        );
+      case "digital":
+        return projectCategories.filter((c) =>
+          c.name.includes("Brand")
+        );
+      default:
+        return projectCategories;
+    }
+  };
+
+  const filteredCategories = getFilteredCategories();
+
   return (
     <section id="portfolio" className="py-20 md:py-32 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -327,18 +360,37 @@ export function PortfolioGrid() {
           </p>
         </div>
 
+        {/* Tabs */}
+        <div className="flex flex-wrap justify-center gap-2 mb-12">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                activeTab === tab.id
+                  ? "bg-foreground text-background"
+                  : "bg-secondary text-muted-foreground hover:text-foreground hover:bg-secondary/80"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
         <div className="space-y-20">
-          {projectCategories.map((category, categoryIndex) => (
+          {filteredCategories.map((category) => (
             <div key={category.name}>
-              <div className="mb-10">
-                <h3 className="text-2xl sm:text-3xl font-semibold mb-2">
-                  {category.name}
-                </h3>
-                <p className="text-muted-foreground">{category.description}</p>
-              </div>
+              {activeTab === "all" && (
+                <div className="mb-10">
+                  <h3 className="text-2xl sm:text-3xl font-semibold mb-2">
+                    {category.name}
+                  </h3>
+                  <p className="text-muted-foreground">{category.description}</p>
+                </div>
+              )}
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.projects.map((project, index) => (
+                {category.projects.map((project) => (
                   <Card
                     key={project.title}
                     className="group overflow-hidden border-border hover:border-accent transition-all duration-300 cursor-pointer h-full flex flex-col p-0"

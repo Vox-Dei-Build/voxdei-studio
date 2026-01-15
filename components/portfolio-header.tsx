@@ -13,6 +13,7 @@ export function PortfolioHeader() {
     { name: "Partners", href: "#partners" },
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
+    { name: "Thoughts", href: "https://www.voxdei.io/", external: true },
   ]
 
   return (
@@ -31,6 +32,7 @@ export function PortfolioHeader() {
               <a
                 key={item.name}
                 href={item.href}
+                {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.name}
@@ -56,6 +58,7 @@ export function PortfolioHeader() {
                 <a
                   key={item.name}
                   href={item.href}
+                  {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

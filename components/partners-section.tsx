@@ -37,7 +37,7 @@ export function PartnersSection() {
 
         {/* Scrolling Marquee */}
         <div className="relative overflow-hidden">
-          <div className="flex animate-scroll">
+          <div className="flex animate-marquee w-max">
             {/* First set of logos */}
             {partners.map((partner, index) => (
               <a
@@ -45,14 +45,15 @@ export function PartnersSection() {
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 mx-8 md:mx-16 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+                title={partner.name}
+                className="shrink-0 mx-8 md:mx-12 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
               >
-                <div className="relative w-16 h-16 md:w-24 md:h-24 flex items-center justify-center">
+                <div className="relative w-24 h-16 md:w-32 md:h-20 flex items-center justify-center">
                   <Image
                     src={partner.logo}
                     alt={`${partner.name} logo - trusted partner of Vox Dei Studio`}
                     fill
-                    className="object-contain max-w-14 max-h-14 md:max-w-20 md:max-h-20"
+                    className="object-contain"
                   />
                 </div>
               </a>
@@ -64,14 +65,15 @@ export function PartnersSection() {
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 mx-8 md:mx-16 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+                title={partner.name}
+                className="shrink-0 mx-8 md:mx-12 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
               >
-                <div className="relative w-16 h-16 md:w-24 md:h-24 flex items-center justify-center">
+                <div className="relative w-24 h-16 md:w-32 md:h-20 flex items-center justify-center">
                   <Image
                     src={partner.logo}
                     alt={`${partner.name} logo - trusted partner of Vox Dei Studio`}
                     fill
-                    className="object-contain max-w-14 max-h-14 md:max-w-20 md:max-h-20"
+                    className="object-contain"
                   />
                 </div>
               </a>
@@ -79,25 +81,6 @@ export function PartnersSection() {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .animate-scroll {
-          animation: scroll 20s linear infinite;
-        }
-
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   )
 }

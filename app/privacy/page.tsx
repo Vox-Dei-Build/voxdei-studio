@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { BackButton } from "@/components/back-button";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Vox Dei Studio",
@@ -9,6 +10,9 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <div className="mb-6">
+          <BackButton />
+        </div>
         <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
         <p className="text-muted-foreground mb-12">Last Updated: January 13, 2026</p>
 
