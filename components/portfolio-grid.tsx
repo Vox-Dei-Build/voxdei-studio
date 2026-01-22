@@ -393,7 +393,7 @@ export function PortfolioGrid() {
                 {category.projects.map((project) => (
                   <Card
                     key={project.title}
-                    className="group overflow-hidden border-border hover:border-accent transition-all duration-300 cursor-pointer h-full flex flex-col p-0"
+                    className="group overflow-hidden border-border hover:border-foreground/20 transition-all duration-300 cursor-pointer h-full flex flex-col p-0"
                     onClick={() =>
                       project.link && window.open(project.link, "_blank")
                     }
@@ -424,7 +424,7 @@ export function PortfolioGrid() {
                         )}
                       </div>
 
-                      <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">
+                      <h3 className="text-xl font-semibold mb-2 group-hover:text-muted-foreground transition-colors">
                         {project.title}
                       </h3>
 

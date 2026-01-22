@@ -11,7 +11,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-3">Vox Dei Studio</h3>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
               Building AI-enabled products, enterprise platforms, and digital
-              experiences - fast.
+              experiences — fast.
             </p>
           </div>
 
@@ -36,10 +36,10 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#partners"
+                  href="#testimonials"
                   className="hover:text-foreground transition-colors"
                 >
-                  Partners
+                  Testimonials
                 </a>
               </li>
               <li>
@@ -48,14 +48,6 @@ export function Footer() {
                   className="hover:text-foreground transition-colors"
                 >
                   About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="hover:text-foreground transition-colors"
-                >
-                  Contact
                 </a>
               </li>
               <li>

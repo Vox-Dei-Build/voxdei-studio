@@ -41,7 +41,7 @@ export function TestimonialsSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Hear from enterprise leaders, CTOs, and founders who have partnered with Vox Dei Studio to build AI-powered platforms and transformative software
+            Hear from enterprise leaders, CTOs, and founders who have partnered with Vox Dei Studio to build AI-powered platforms and transformative software.
           </p>
         </div>
 
@@ -58,7 +58,7 @@ export function TestimonialsSection() {
                     href={testimonial.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-foreground hover:text-accent transition-colors inline-block"
+                    className="font-semibold text-foreground hover:text-muted-foreground transition-colors inline-block"
                     aria-label={`View ${testimonial.author} on LinkedIn`}
                   >
                     {testimonial.author}

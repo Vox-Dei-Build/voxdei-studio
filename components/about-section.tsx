@@ -57,7 +57,7 @@ export function AboutSection() {
               {principles.map((principle) => (
                 <div key={principle.title} className="flex gap-4">
                   <div className="shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-accent mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-foreground mt-0.5" />
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">{principle.title}</h4>

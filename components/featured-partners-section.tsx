@@ -34,7 +34,7 @@ const featuredPartners = [
 
 export function FeaturedPartnersSection() {
   return (
-    <section className="py-20 bg-background" aria-label="Strategic ecosystem partnerships">
+    <section id="ecosystem" className="py-20 bg-background" aria-label="Strategic ecosystem partnerships">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Strategic Ecosystem Partners</h2>
@@ -47,7 +47,7 @@ export function FeaturedPartnersSection() {
           {featuredPartners.map((partner) => (
             <Card
               key={partner.name}
-              className="group hover:border-accent transition-all duration-300 cursor-pointer flex flex-col"
+              className="group hover:border-foreground/20 transition-all duration-300 cursor-pointer flex flex-col"
               onClick={() => window.open(partner.url, "_blank")}
               role="article"
               aria-label={`${partner.name} partnership details`}

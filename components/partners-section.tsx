@@ -26,13 +26,14 @@ const partners = [
 
 export function PartnersSection() {
   return (
-    <section id="partners" className="py-16 bg-muted/30" aria-label="Trusted partners and clients">
+    <section id="partners" className="py-12 bg-background" aria-label="Trusted partners and clients">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted By Leading Brands</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Proud to have partnered with industry-leading brands and organizations across fintech, healthcare, e-commerce, and enterprise software
+        <div className="flex items-center gap-6 mb-10">
+          <div className="flex-1 h-px bg-border" />
+          <p className="text-sm text-muted-foreground text-center shrink-0">
+            <span className="font-medium text-foreground">Trusted by leading brands</span> to build world-class digital products.
           </p>
+          <div className="flex-1 h-px bg-border" />
         </div>
 
         {/* Scrolling Marquee */}

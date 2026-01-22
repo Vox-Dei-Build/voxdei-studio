@@ -56,11 +56,11 @@ export function CapabilitiesSection() {
           {capabilities.map((capability) => {
             const Icon = capability.icon
             return (
-              <Card key={capability.title} className="border-border hover:border-accent transition-colors">
+              <Card key={capability.title} className="border-border hover:border-foreground/20 transition-colors">
                 <CardContent className="p-6">
                   <div className="mb-4">
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10">
-                      <Icon className="w-6 h-6 text-accent" />
+                      <Icon className="w-6 h-6 text-foreground" />
                     </div>
                   </div>
                   <h3 className="text-lg font-semibold mb-2">{capability.title}</h3>
