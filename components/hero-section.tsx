@@ -49,18 +49,12 @@ export function HeroSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <div className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-muted text-foreground rounded-full">
+            <span className="inline-flex items-center px-4 py-2 text-sm font-medium bg-muted text-foreground rounded-full">
               Venture Studio & Technical Partner
-              <a
-                href="#about"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Learn more
-              </a>
             </span>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] mb-8">
             Ship faster.
             <br />
             Scale smarter.
@@ -83,29 +77,31 @@ export function HeroSection() {
 
           {/* Partner logos - contained width with fade */}
           <div className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-6 mb-10">
-              <div className="flex-1 h-px bg-border" />
-              <p className="text-sm text-muted-foreground text-center shrink-0">
+            <div className="flex items-center justify-center gap-4 md:gap-6 mb-10">
+              <div className="hidden sm:block flex-1 h-px bg-border" />
+              <p className="text-sm text-muted-foreground text-center">
                 <span className="font-medium text-foreground">
                   Trusted by leading brands
                 </span>{" "}
-                to build world-class products.
+                <span className="hidden sm:inline">to build world-class products.</span>
               </p>
-              <div className="flex-1 h-px bg-border" />
+              <div className="hidden sm:block flex-1 h-px bg-border" />
             </div>
 
-            <div className="relative h-16 md:h-20">
+            <div className="relative h-14 sm:h-16 md:h-20 overflow-hidden">
               {partnerSets.map((partners, setIndex) => (
                 <div
                   key={setIndex}
-                  className={`absolute inset-0 flex items-center justify-center gap-8 md:gap-12 transition-opacity duration-1000 ${
+                  className={`absolute inset-0 flex items-center justify-center gap-5 sm:gap-6 md:gap-10 transition-opacity duration-1000 ${
                     currentSet === setIndex ? "opacity-100" : "opacity-0"
                   }`}
                 >
-                  {partners.map((partner) => (
+                  {partners.map((partner, partnerIndex) => (
                     <div
                       key={partner.name}
-                      className="relative w-20 h-12 md:w-28 md:h-16 grayscale opacity-70"
+                      className={`relative w-16 h-10 sm:w-18 sm:h-11 md:w-24 md:h-14 grayscale opacity-70 shrink-0 ${
+                        partnerIndex >= 4 ? "hidden sm:block" : ""
+                      } ${partnerIndex >= 5 ? "hidden! md:block!" : ""}`}
                     >
                       <Image
                         src={partner.logo}
