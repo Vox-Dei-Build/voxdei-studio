@@ -48,7 +48,7 @@ export function PortfolioHeader() {
               asChild
               className="rounded-full px-5 bg-foreground text-background hover:bg-foreground/90"
             >
-              <a href="#contact">Get an estimate</a>
+              <a href="#contact">Make It Happen</a>
             </Button>
           </div>
 
@@ -88,7 +88,7 @@ export function PortfolioHeader() {
                 className="w-full mt-2 rounded-full bg-foreground text-background hover:bg-foreground/90"
               >
                 <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  Get an estimate
+                  Make It Happen
                 </a>
               </Button>
             </div>

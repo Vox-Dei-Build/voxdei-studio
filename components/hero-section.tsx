@@ -71,7 +71,7 @@ export function HeroSection() {
               asChild
               className="h-14 px-10 text-base font-medium rounded-full bg-foreground hover:bg-foreground/90 text-background shadow-none"
             >
-              <a href="#contact">Get an estimate</a>
+              <a href="#contact">Make It Happen</a>
             </Button>
           </div>
 
@@ -83,7 +83,9 @@ export function HeroSection() {
                 <span className="font-medium text-foreground">
                   Trusted by leading brands
                 </span>{" "}
-                <span className="hidden sm:inline">to build world-class products.</span>
+                <span className="hidden sm:inline">
+                  to build world-class products.
+                </span>
               </p>
               <div className="hidden sm:block flex-1 h-px bg-border" />
             </div>

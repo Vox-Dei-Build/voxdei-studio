@@ -175,7 +175,7 @@ export function ContactSection() {
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Get an estimate..."
+                        placeholder="Make It Happen..."
                         rows={5}
                         required
                       />
