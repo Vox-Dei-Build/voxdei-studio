@@ -42,9 +42,13 @@ const capabilities = [
 
 export function CapabilitiesSection() {
   return (
-    <section id="capabilities" className="py-20 md:py-32">
+    <section
+      id="capabilities"
+      className="py-20 md:py-32"
+      data-aos="fade-up"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 max-w-3xl">
+        <div className="mb-16 max-w-3xl" data-aos="fade-up">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4">What We Do</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
             From AI-powered ventures to enterprise banking platforms and premium brand experiences — we deliver
@@ -53,10 +57,15 @@ export function CapabilitiesSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {capabilities.map((capability) => {
+          {capabilities.map((capability, index) => {
             const Icon = capability.icon
             return (
-              <Card key={capability.title} className="border-border hover:border-foreground/20 transition-colors">
+              <Card
+                key={capability.title}
+                className="border-border hover:border-foreground/20 transition-colors"
+                data-aos="fade-up"
+                data-aos-delay={index * 60}
+              >
                 <CardContent className="p-6">
                   <div className="mb-4">
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10">

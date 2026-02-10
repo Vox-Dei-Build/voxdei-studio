@@ -45,27 +45,38 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-44 lg:pb-24 overflow-hidden bg-background">
+    <section
+      className="relative pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-44 lg:pb-24 overflow-hidden bg-background"
+      data-aos="fade-up"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="mb-6">
+          <div className="mb-6" data-aos="fade-down" data-aos-delay="50">
             <span className="inline-flex items-center px-4 py-2 text-sm font-medium bg-muted text-foreground rounded-full">
               Venture Studio & Technical Partner
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] mb-8">
+          <h1
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] mb-8"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             Ship faster.
             <br />
             Scale smarter.
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12 max-w-3xl mx-auto">
+          <p
+            className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12 max-w-3xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
             Building AI-enabled products, enterprise platforms, and digital
             experiences — fast.
           </p>
 
-          <div className="flex justify-center mb-20">
+          <div className="flex justify-center mb-20" data-aos="zoom-in" data-aos-delay="200">
             <Button
               size="lg"
               asChild
@@ -77,7 +88,11 @@ export function HeroSection() {
 
           {/* Partner logos - contained width with fade */}
           <div className="max-w-5xl mx-auto">
-            <div className="flex items-center justify-center gap-4 md:gap-6 mb-10">
+            <div
+              className="flex items-center justify-center gap-4 md:gap-6 mb-10"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
               <div className="hidden sm:block flex-1 h-px bg-border" />
               <p className="text-sm text-muted-foreground text-center">
                 <span className="font-medium text-foreground">
@@ -90,7 +105,11 @@ export function HeroSection() {
               <div className="hidden sm:block flex-1 h-px bg-border" />
             </div>
 
-            <div className="relative h-14 sm:h-16 md:h-20 overflow-hidden">
+            <div
+              className="relative h-14 sm:h-16 md:h-20 overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               {partnerSets.map((partners, setIndex) => (
                 <div
                   key={setIndex}

@@ -4,14 +4,21 @@ import { Button } from "@/components/ui/button"
 
 export function FounderQuoteSection() {
   return (
-    <section id="founder" className="py-20 md:py-32 bg-muted/30">
+    <section
+      id="founder"
+      className="py-20 md:py-32 bg-muted/30"
+      data-aos="fade-up"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <blockquote className="text-2xl sm:text-3xl md:text-4xl font-medium leading-relaxed mb-8 text-foreground">
+          <blockquote
+            className="text-2xl sm:text-3xl md:text-4xl font-medium leading-relaxed mb-8 text-foreground"
+            data-aos="fade-up"
+          >
             "We build software that ships. Not decks, not promises—working systems that run in production and create real value."
           </blockquote>
 
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-4" data-aos="zoom-in" data-aos-delay="100">
             <div className="relative w-16 h-16 rounded-full overflow-hidden">
               <Image
                 src="/images/061-20240608.jpg"

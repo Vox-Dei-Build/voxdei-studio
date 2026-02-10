@@ -34,9 +34,14 @@ const featuredPartners = [
 
 export function FeaturedPartnersSection() {
   return (
-    <section id="ecosystem" className="py-20 bg-background" aria-label="Strategic ecosystem partnerships">
+    <section
+      id="ecosystem"
+      className="py-20 bg-background"
+      aria-label="Strategic ecosystem partnerships"
+      data-aos="fade-up"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Strategic Ecosystem Partners</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Collaborating with ecosystem leaders to build transformative ventures and support the next generation of founders
@@ -44,13 +49,15 @@ export function FeaturedPartnersSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {featuredPartners.map((partner) => (
+          {featuredPartners.map((partner, index) => (
             <Card
               key={partner.name}
               className="group hover:border-foreground/20 transition-all duration-300 cursor-pointer flex flex-col"
               onClick={() => window.open(partner.url, "_blank")}
               role="article"
               aria-label={`${partner.name} partnership details`}
+              data-aos="fade-up"
+              data-aos-delay={index * 120}
             >
               <CardContent className="p-8 flex flex-col flex-grow">
                 <div className="flex items-start justify-between mb-6">

@@ -348,9 +348,13 @@ export function PortfolioGrid() {
   const filteredCategories = getFilteredCategories();
 
   return (
-    <section id="portfolio" className="py-20 md:py-32 bg-muted/30">
+    <section
+      id="portfolio"
+      className="py-20 md:py-32 bg-muted/30"
+      data-aos="fade-up"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 text-center">
+        <div className="mb-16 text-center" data-aos="fade-up">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4">
             Selected Work
           </h2>
@@ -361,7 +365,11 @@ export function PortfolioGrid() {
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div
+          className="flex flex-wrap justify-center gap-2 mb-12"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -381,7 +389,7 @@ export function PortfolioGrid() {
           {filteredCategories.map((category) => (
             <div key={category.name}>
               {activeTab === "all" && (
-                <div className="mb-10">
+                <div className="mb-10" data-aos="fade-up">
                   <h3 className="text-2xl sm:text-3xl font-semibold mb-2">
                     {category.name}
                   </h3>
@@ -390,10 +398,12 @@ export function PortfolioGrid() {
               )}
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.projects.map((project) => (
+                {category.projects.map((project, projectIndex) => (
                   <Card
                     key={project.title}
                     className="group overflow-hidden border-border hover:border-foreground/20 transition-all duration-300 cursor-pointer h-full flex flex-col p-0"
+                    data-aos="fade-up"
+                    data-aos-delay={(projectIndex % 6) * 50}
                     onClick={() =>
                       project.link && window.open(project.link, "_blank")
                     }

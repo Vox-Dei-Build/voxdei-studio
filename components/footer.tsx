@@ -4,10 +4,10 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border py-12">
+    <footer className="border-t border-border py-12" data-aos="fade-up">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div className="md:col-span-2">
+          <div className="md:col-span-2" data-aos="fade-up">
             <h3 className="text-lg font-semibold mb-3">Vox Dei Studio</h3>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
               Building AI-enabled products, enterprise platforms, and digital
@@ -15,7 +15,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div>
+          <div data-aos="fade-up" data-aos-delay="80">
             <h4 className="text-sm font-semibold mb-3">Navigation</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
@@ -63,7 +63,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div data-aos="fade-up" data-aos-delay="140">
             <h4 className="text-sm font-semibold mb-3">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
@@ -78,7 +78,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border">
+        <div className="pt-8 border-t border-border" data-aos="fade-up" data-aos-delay="200">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>© {currentYear} Vox Dei Studio. All rights reserved.</p>
             <div className="flex gap-6">

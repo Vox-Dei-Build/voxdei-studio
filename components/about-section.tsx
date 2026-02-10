@@ -25,10 +25,14 @@ const principles = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 md:py-32">
+    <section
+      id="about"
+      className="py-20 md:py-32"
+      data-aos="fade-up"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div>
+          <div data-aos="fade-right">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-6">
               Venture Studio & Technical Partner
             </h2>
@@ -51,11 +55,16 @@ export function AboutSection() {
             </div>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6" data-aos="fade-left">
             <h3 className="text-2xl font-semibold mb-6">Why Work With Us</h3>
             <div className="space-y-6">
-              {principles.map((principle) => (
-                <div key={principle.title} className="flex gap-4">
+              {principles.map((principle, index) => (
+                <div
+                  key={principle.title}
+                  className="flex gap-4"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 60}
+                >
                   <div className="shrink-0">
                     <CheckCircle2 className="w-5 h-5 text-foreground mt-0.5" />
                   </div>

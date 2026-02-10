@@ -106,10 +106,14 @@ export function ContactSection() {
       {/* Web3Forms hCaptcha Script */}
       <Script src="https://web3forms.com/client/script.js" async defer />
 
-      <section id="contact" className="py-20 md:py-32 bg-muted/30">
+      <section
+        id="contact"
+        className="py-20 md:py-32 bg-muted/30"
+        data-aos="fade-up"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-12" data-aos="fade-up">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4">
                 Let's Build Together
               </h2>
@@ -120,7 +124,7 @@ export function ContactSection() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              <Card className="lg:col-span-3">
+              <Card className="lg:col-span-3" data-aos="fade-up">
                 <CardContent className="p-6 md:p-8">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -214,7 +218,7 @@ export function ContactSection() {
               </Card>
 
               <div className="lg:col-span-2 space-y-6">
-                <Card>
+                <Card data-aos="fade-left">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0">
@@ -235,7 +239,7 @@ export function ContactSection() {
                   </CardContent>
                 </Card>
 
-                <Card>
+                <Card data-aos="fade-left" data-aos-delay="100">
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-3">Response Time</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">

@@ -42,9 +42,13 @@ const engagementModels = [
 
 export function EngagementSection() {
   return (
-    <section id="engagement" className="py-20 md:py-32">
+    <section
+      id="engagement"
+      className="py-20 md:py-32"
+      data-aos="fade-up"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 max-w-3xl">
+        <div className="mb-16 max-w-3xl" data-aos="fade-up">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4">
             Ways to Work Together
           </h2>
@@ -54,10 +58,15 @@ export function EngagementSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {engagementModels.map((model) => {
+          {engagementModels.map((model, index) => {
             const Icon = model.icon
             return (
-              <Card key={model.title} className="border-border hover:border-foreground/20 transition-colors">
+              <Card
+                key={model.title}
+                className="border-border hover:border-foreground/20 transition-colors"
+                data-aos="fade-up"
+                data-aos-delay={index * 80}
+              >
                 <CardContent className="p-6">
                   <div className="mb-4">
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10">

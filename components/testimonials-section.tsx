@@ -36,9 +36,14 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-20 bg-muted/30" aria-label="Client testimonials and reviews">
+    <section
+      id="testimonials"
+      className="py-20 bg-muted/30"
+      aria-label="Client testimonials and reviews"
+      data-aos="fade-up"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Hear from enterprise leaders, CTOs, and founders who have partnered with Vox Dei Studio to build AI-powered platforms and transformative software.
@@ -47,7 +52,14 @@ export function TestimonialsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="border-border flex flex-col h-full" role="article" aria-label={`Testimonial from ${testimonial.author}`}>
+            <Card
+              key={index}
+              className="border-border flex flex-col h-full"
+              role="article"
+              aria-label={`Testimonial from ${testimonial.author}`}
+              data-aos="fade-up"
+              data-aos-delay={index * 80}
+            >
               <CardContent className="p-8 flex flex-col h-full">
                 <Quote className="w-10 h-10 text-muted-foreground mb-4" aria-hidden="true" />
                 <blockquote className="text-muted-foreground leading-relaxed mb-6 grow">

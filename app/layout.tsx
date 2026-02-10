@@ -2,6 +2,8 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
+import { AOSInit } from "@/components/aos-init";
 import { CookieBanner } from "@/components/cookie-banner";
 import "./globals.css";
 
@@ -93,10 +95,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+        />
+      </head>
       <body className={`font-sans antialiased`}>
+        <AOSInit />
         {children}
         <CookieBanner />
         <Analytics />
+        <Script
+          src="https://unpkg.com/aos@2.3.4/dist/aos.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
