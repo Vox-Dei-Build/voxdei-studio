@@ -5,18 +5,16 @@ export function StructuredData() {
     name: "Vox Dei Studio",
     alternateName: "Vox Dei",
     url: "https://studio.voxdei.io",
-    logo: "https://studio.voxdei.io/logo-v.png",
+    logo: "https://studio.voxdei.io/logo-vd.png",
     description:
-      "AI Venture Studio building AI-enabled products, platforms, and modern systems — fast. We partner with enterprises and startups to design, build, and ship production-grade software.",
+      "Senior venture and product partner for founders and operators building AI-native products, operational systems, and mobile-first platforms.",
     foundingDate: "2014",
     address: {
       "@type": "PostalAddress",
       addressCountry: "ZA",
       addressRegion: "South Africa",
     },
-    sameAs: [
-      "https://github.com/orgs/Vox-Dei-Build",
-    ],
+    sameAs: ["https://github.com/orgs/Vox-Dei-Build"],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Business",
@@ -27,7 +25,7 @@ export function StructuredData() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "AI Venture Studio & Software Development",
+    serviceType: "Senior Product and Venture Delivery",
     provider: {
       "@type": "Organization",
       name: "Vox Dei Studio",
@@ -38,77 +36,42 @@ export function StructuredData() {
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Software Development Services",
+      name: "Studio Services",
       itemListElement: [
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "AI Product Development",
-            description:
-              "Building AI-enabled products and platforms for startups and enterprises",
+            name: "AI-native Product Development",
+            description: "Designing and shipping AI-native products, workflows, and operational systems.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Enterprise Platform Development",
-            description:
-              "Large-scale enterprise software and platform development with modern architecture",
+            name: "Operational Platform Builds",
+            description: "Building internal and customer-facing software systems with senior execution and enterprise discipline.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Venture Building",
-            description:
-              "End-to-end venture building from concept to production-grade systems",
+            name: "Launch Partner",
+            description: "Helping founders and teams shape, build, and launch serious digital products.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Full-Stack Development",
-            description:
-              "Complete software development with React, Next.js, TypeScript, and modern tech stack",
+            name: "Technical Partner",
+            description: "Senior technical partnership across product judgment, architecture, delivery, and execution oversight.",
           },
         },
       ],
     },
-  }
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://studio.voxdei.io",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Portfolio",
-        item: "https://studio.voxdei.io/#portfolio",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "About",
-        item: "https://studio.voxdei.io/#about",
-      },
-      {
-        "@type": "ListItem",
-        position: 4,
-        name: "Contact",
-        item: "https://studio.voxdei.io/#contact",
-      },
-    ],
   }
 
   const websiteSchema = {
@@ -117,7 +80,7 @@ export function StructuredData() {
     name: "Vox Dei Studio",
     url: "https://studio.voxdei.io",
     description:
-      "AI Venture Studio building AI-enabled products, platforms, and modern systems — fast.",
+      "Credible products for serious teams. Vox Dei Studio helps founders and operators build AI-native products, operational systems, and mobile-first platforms.",
     publisher: {
       "@type": "Organization",
       name: "Vox Dei Studio",
@@ -126,22 +89,9 @@ export function StructuredData() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
     </>
   )
 }

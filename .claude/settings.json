@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.roomking.co.za)",
+      "WebFetch(domain:www.koekie.co.za)",
+      "WebFetch(domain:www.russianbear.co.za)",
+      "WebFetch(domain:www.unitedexports.co.za)",
+      "WebFetch(domain:roomking.com)",
+      "WebFetch(domain:www.brightafrica.net)",
+      "WebFetch(domain:www.truebluecw.com)",
+      "WebFetch(domain:www.brightafrica.org)",
+      "WebFetch(domain:koekie.co.za)",
+      "WebFetch(domain:www.trueblue.cw)"
+    ]
+  }
+}
