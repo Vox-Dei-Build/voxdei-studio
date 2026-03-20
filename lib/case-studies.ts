@@ -35,6 +35,8 @@ export const caseStudies: CaseStudy[] = [
       "Proof that Vox Dei can operate with enterprise discipline, not only speed.",
       "A sharper signal for buyers who need quality under complexity.",
     ],
+    liveUrl: "https://www.fnb.co.za/index.html",
+    liveLabel: "View FNB",
   },
   {
     slug: "backabuddy",
@@ -105,6 +107,8 @@ export const caseStudies: CaseStudy[] = [
       "Proof of execution in environments where simplicity and usefulness matter more than polish theatre.",
       "A clearer example of Vox Dei working close to real-world adoption constraints.",
     ],
+    liveUrl: "https://pasella.co/",
+    liveLabel: "View Pasella",
   },
   {
     slug: "athaus",
@@ -127,6 +131,8 @@ export const caseStudies: CaseStudy[] = [
       "Sharper UX in areas where trust, speed, and usability needed to coexist.",
       "Evidence of senior product judgment under real operating pressure.",
     ],
+    liveUrl: "https://www.athaus.ai/en/",
+    liveLabel: "View Athaus",
   },
 ]
 

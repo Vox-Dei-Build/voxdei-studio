@@ -18,6 +18,8 @@ export const portfolioItems: PortfolioItem[] = [
       "Frontend architecture and design-system quality inside a national-scale enterprise context where consistency and reliability matter most.",
     image: "/screenshots/fnb.png",
     logo: "/logos/fnb.png",
+    liveUrl: "https://www.fnb.co.za/index.html",
+    liveLabel: "View FNB",
   },
   {
     slug: "backabuddy",
@@ -49,6 +51,8 @@ export const portfolioItems: PortfolioItem[] = [
       "Mobile-first conversational journeys across selling, onboarding, and payment flows shaped for real customer behaviour in emerging-market conditions.",
     image: "/screenshots/pasella.png",
     logo: "/logos/pasella.png",
+    liveUrl: "https://pasella.co/",
+    liveLabel: "View Pasella",
   },
   {
     slug: "athaus",
@@ -58,6 +62,8 @@ export const portfolioItems: PortfolioItem[] = [
       "Product direction, UX refinement, and delivery quality across an AI-native real-estate operating layer under live commercial pressure.",
     image: "/screenshots/andrual.png",
     logo: "/logos/andrual.png",
+    liveUrl: "https://www.athaus.ai/en/",
+    liveLabel: "View Athaus",
   },
   {
     name: "Doctorly",
