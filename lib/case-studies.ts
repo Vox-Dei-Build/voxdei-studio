@@ -81,6 +81,8 @@ export const caseStudies: CaseStudy[] = [
       "Stronger digital articulation of a brand built over three centuries.",
       "Proof of Vox Dei's ability to operate at the intersection of luxury, brand, and digital product quality.",
     ],
+    liveUrl: "https://www.remymartin.com/",
+    liveLabel: "View Rémy Martin",
   },
   {
     slug: "pasella",

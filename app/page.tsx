@@ -379,9 +379,9 @@ export default function Home() {
                         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/10 to-transparent" />
                       </div>
                       <div className="p-7 sm:p-8">
-                        <div className="flex items-start justify-between gap-4">
+                        <div className="flex flex-col gap-2">
+                          <p className="text-[10px] uppercase tracking-[0.25em] text-black/45 dark:text-white/45">{item.category}</p>
                           <h3 className="text-xl font-medium tracking-[-0.03em] sm:text-2xl">{item.name}</h3>
-                          <p className="shrink-0 pt-1 text-[10px] uppercase tracking-[0.25em] text-black/45 dark:text-white/45">{item.category}</p>
                         </div>
                         <p className="mt-4 text-sm leading-[1.85] text-black/60 dark:text-white/60">{item.summary}</p>
                         <div className="mt-7 flex items-center justify-between gap-4 border-t border-black/10 dark:border-white/10 pt-6">
