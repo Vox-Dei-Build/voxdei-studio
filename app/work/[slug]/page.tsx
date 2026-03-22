@@ -29,7 +29,7 @@ function GradientRule({ className = "" }: { className?: string }) {
   return (
     <div
       aria-hidden="true"
-      className={`h-px w-full bg-linear-to-r from-transparent via-black/20 dark:via-white/20 to-transparent ${className}`}
+      className={`h-px w-full bg-linear-to-r from-transparent via-brand/30 to-transparent ${className}`}
     />
   )
 }
@@ -81,7 +81,7 @@ export default async function CaseStudyPage({
       {/* Page-level radial glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-220 bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(0,0,0,0.04),transparent)] dark:bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(255,255,255,0.055),transparent)]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-220 bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(181,96,58,0.06),transparent)] dark:bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(212,128,90,0.07),transparent)]"
       />
 
       <div className="relative mx-auto max-w-336 px-6 sm:px-10 lg:px-16">
@@ -147,7 +147,7 @@ export default async function CaseStudyPage({
           <div className="grid gap-14 lg:grid-cols-[1.5fr_1fr] lg:gap-24">
 
             <div data-aos="fade-up">
-              <p className="text-[10px] uppercase tracking-[0.35em] text-black/45 dark:text-white/45">Overview</p>
+              <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Overview</p>
               <p className="mt-8 text-[1.45rem] font-medium leading-[1.32] tracking-[-0.035em] sm:text-[1.75rem] lg:text-[2.1rem]">
                 {study.summary}
               </p>
@@ -159,7 +159,7 @@ export default async function CaseStudyPage({
               data-aos-delay="80"
             >
               <GradientRule className="mb-8 lg:hidden" />
-              <p className="text-[10px] uppercase tracking-[0.35em] text-black/45 dark:text-white/45">Signal</p>
+              <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Signal</p>
               <blockquote className="mt-5 text-base italic leading-[1.85] text-black/55 dark:text-white/55 sm:text-lg">
                 &ldquo;{study.proof}&rdquo;
               </blockquote>
@@ -189,8 +189,8 @@ export default async function CaseStudyPage({
             {/* Challenge */}
             <div data-aos="fade-up">
               <div className="mb-8 flex items-baseline gap-5">
-                <span className="text-[10px] uppercase tracking-[0.35em] text-black/35 dark:text-white/35">01</span>
-                <p className="text-[10px] uppercase tracking-[0.35em] text-black/45 dark:text-white/45">Challenge</p>
+                <span className="text-[10px] uppercase tracking-[0.35em] text-brand">01</span>
+                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Challenge</p>
               </div>
               <p className="text-sm leading-[1.95] text-black/60 dark:text-white/60 sm:text-base">
                 {study.challenge}
@@ -200,8 +200,8 @@ export default async function CaseStudyPage({
             {/* What we did */}
             <div data-aos="fade-up" data-aos-delay="60">
               <div className="mb-8 flex items-baseline gap-5">
-                <span className="text-[10px] uppercase tracking-[0.35em] text-black/35 dark:text-white/35">02</span>
-                <p className="text-[10px] uppercase tracking-[0.35em] text-black/45 dark:text-white/45">What we did</p>
+                <span className="text-[10px] uppercase tracking-[0.35em] text-brand">02</span>
+                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">What we did</p>
               </div>
               <ul className="space-y-0">
                 {study.work.map((item, i) => (
@@ -218,8 +218,8 @@ export default async function CaseStudyPage({
             {/* Outcome */}
             <div data-aos="fade-up" data-aos-delay="120">
               <div className="mb-8 flex items-baseline gap-5">
-                <span className="text-[10px] uppercase tracking-[0.35em] text-black/35 dark:text-white/35">03</span>
-                <p className="text-[10px] uppercase tracking-[0.35em] text-black/45 dark:text-white/45">Outcome</p>
+                <span className="text-[10px] uppercase tracking-[0.35em] text-brand">03</span>
+                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Outcome</p>
               </div>
               <ul className="space-y-0">
                 {study.outcome.map((item, i) => (
@@ -238,7 +238,7 @@ export default async function CaseStudyPage({
 
         {/* ─── Next case study ────────────────────────────────── */}
         <section className="border-t border-black/10 dark:border-white/10 py-20 sm:py-28" data-aos="fade-up">
-          <p className="text-[10px] uppercase tracking-[0.35em] text-black/45 dark:text-white/45">Next</p>
+          <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Next</p>
 
           <Link
             href={`/work/${nextStudy.slug}`}

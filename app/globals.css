@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --brand: #B5603A;
   --background: oklch(0.99 0 0);
   --foreground: oklch(0.05 0 0);
   --card: oklch(1 0 0);
@@ -40,6 +41,7 @@
 }
 
 .dark {
+  --brand: #D4805A;
   --background: oklch(0 0 0);
   --foreground: oklch(0.98 0 0);
   --card: oklch(0.14 0.002 106);
@@ -75,6 +77,7 @@
 }
 
 @theme inline {
+  --color-brand: var(--brand);
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);

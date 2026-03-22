@@ -16,7 +16,7 @@ function GradientRule({ className = "" }: { className?: string }) {
   return (
     <div
       aria-hidden="true"
-      className={`h-px w-full bg-linear-to-r from-transparent via-black/20 dark:via-white/20 to-transparent ${className}`}
+      className={`h-px w-full bg-linear-to-r from-transparent via-brand/30 to-transparent ${className}`}
     />
   )
 }
@@ -28,7 +28,7 @@ export default function WorkPage() {
       {/* Page-level radial glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-220 bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(0,0,0,0.04),transparent)] dark:bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(255,255,255,0.055),transparent)]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-220 bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(181,96,58,0.06),transparent)] dark:bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(212,128,90,0.07),transparent)]"
       />
 
       <div className="relative mx-auto max-w-336 px-6 sm:px-10 lg:px-16">
@@ -68,7 +68,7 @@ export default function WorkPage() {
         {/* ─── Hero ───────────────────────────────────────────── */}
         <section className="pb-16 pt-20 sm:pb-20 sm:pt-28">
           <div data-aos="fade-up">
-            <p className="text-[11px] uppercase tracking-[0.35em] text-black/50 dark:text-white/50">
+            <p className="text-[11px] uppercase tracking-[0.35em] text-brand">
               Selected work
             </p>
             <h1 className="mt-7 text-[3.5rem] font-medium leading-[0.88] tracking-[-0.055em] sm:text-[5.5rem] lg:text-[7rem]">
@@ -132,7 +132,7 @@ export default function WorkPage() {
                 {/* Info */}
                 <div className="flex flex-1 flex-col justify-between gap-5 p-6">
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.3em] text-black/40 dark:text-white/40">{item.category}</p>
+                    <p className="text-[10px] uppercase tracking-[0.3em] text-brand/70">{item.category}</p>
                     <h2 className="mt-2 text-base font-medium tracking-[-0.02em] sm:text-lg">{item.name}</h2>
                     <p className="mt-3 text-sm leading-[1.75] text-black/50 dark:text-white/50">{item.summary}</p>
                   </div>

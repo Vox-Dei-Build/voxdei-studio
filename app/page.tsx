@@ -50,7 +50,7 @@ function GradientRule({ className = "" }: { className?: string }) {
   return (
     <div
       aria-hidden="true"
-      className={`h-px w-full bg-linear-to-r from-transparent via-black/20 dark:via-white/20 to-transparent ${className}`}
+      className={`h-px w-full bg-linear-to-r from-transparent via-brand/30 to-transparent ${className}`}
     />
   )
 }
@@ -75,7 +75,7 @@ export default function Home() {
         {/* Page-level radial glow — barely visible, adds depth at top */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-220 bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(0,0,0,0.04),transparent)] dark:bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(255,255,255,0.055),transparent)]"
+          className="pointer-events-none absolute inset-x-0 top-0 h-220 bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(181,96,58,0.06),transparent)] dark:bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(212,128,90,0.07),transparent)]"
         />
 
         <div className="relative mx-auto max-w-336 px-6 sm:px-10 lg:px-16">
@@ -116,7 +116,7 @@ export default function Home() {
           {/* ─── Hero ───────────────────────────────────────────── */}
           <section id="top" className="scroll-mt-20 pb-16 pt-20 sm:pb-20 sm:pt-28 lg:pt-36">
             <div data-aos="fade-up">
-              <p className="text-[11px] uppercase tracking-[0.35em] text-black/50 dark:text-white/50">
+              <p className="text-[11px] uppercase tracking-[0.35em] text-brand">
                 Venture studio · product partner · technical direction
               </p>
               <h1 className="mt-7 text-[4rem] font-medium leading-[0.86] tracking-[-0.055em] sm:text-[6.5rem] lg:text-[8.5rem]">
@@ -164,7 +164,7 @@ export default function Home() {
                 { term: "Operating in", desc: "South Africa · Europe" },
               ].map((item) => (
                 <div key={item.term} className="bg-white dark:bg-black px-5 py-5 sm:px-6">
-                  <dt className="text-[10px] uppercase tracking-[0.3em] text-black/45 dark:text-white/45">{item.term}</dt>
+                  <dt className="text-[10px] uppercase tracking-[0.3em] text-brand">{item.term}</dt>
                   <dd className="mt-2 text-sm text-black/80 dark:text-white/80">{item.desc}</dd>
                 </div>
               ))}
@@ -173,7 +173,7 @@ export default function Home() {
 
           {/* ─── Partners ───────────────────────────────────────── */}
           <div className="border-t border-black/10 dark:border-white/10 py-10" data-aos="fade-up">
-            <p className="mb-7 text-[10px] uppercase tracking-[0.35em] text-black/45 dark:text-white/45">Selected partners</p>
+            <p className="mb-7 text-[10px] uppercase tracking-[0.35em] text-brand">Selected partners</p>
             <div className="overflow-hidden">
               <div className="animate-marquee flex min-w-max items-center gap-14 sm:gap-18">
                 {logoRow.map((logo, index) => (
@@ -199,7 +199,7 @@ export default function Home() {
             <div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
 
               <div className="lg:sticky lg:top-24 lg:self-start" data-aos="fade-up">
-                <p className="text-[10px] uppercase tracking-[0.35em] text-black/45 dark:text-white/45">The studio</p>
+                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">The studio</p>
               </div>
 
               <div>
@@ -222,7 +222,7 @@ export default function Home() {
                       data-aos="fade-up"
                       data-aos-delay={60 + index * 50}
                     >
-                      <span className="text-[10px] uppercase tracking-[0.35em] text-black/45 dark:text-white/45">{item.number}</span>
+                      <span className="text-[10px] uppercase tracking-[0.35em] text-brand">{item.number}</span>
                       <h3 className="text-base font-medium tracking-[-0.015em] sm:text-lg">{item.title}</h3>
                       <p className="text-sm leading-[1.85] text-black/60 dark:text-white/60">{item.body}</p>
                     </div>
@@ -238,7 +238,7 @@ export default function Home() {
             <div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
 
               <div className="lg:sticky lg:top-24 lg:self-start" data-aos="fade-up">
-                <p className="text-[10px] uppercase tracking-[0.35em] text-black/45 dark:text-white/45">What they say</p>
+                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">What they say</p>
               </div>
 
               <div className="grid gap-px bg-black/10 dark:bg-white/10 sm:grid-cols-2">
@@ -304,7 +304,7 @@ export default function Home() {
             <div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
 
               <div className="lg:sticky lg:top-24 lg:self-start" data-aos="fade-up">
-                <p className="text-[10px] uppercase tracking-[0.35em] text-black/45 dark:text-white/45">Selected work</p>
+                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Selected work</p>
               </div>
 
               <div>
@@ -408,7 +408,7 @@ export default function Home() {
             <div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
 
               <div className="lg:sticky lg:top-24 lg:self-start" data-aos="fade-up">
-                <p className="text-[10px] uppercase tracking-[0.35em] text-black/45 dark:text-white/45">Strategic partners</p>
+                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Strategic partners</p>
               </div>
 
               <div>
@@ -468,7 +468,7 @@ export default function Home() {
             <div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
 
               <div className="lg:sticky lg:top-24 lg:self-start" data-aos="fade-up">
-                <p className="text-[10px] uppercase tracking-[0.35em] text-black/45 dark:text-white/45">Why Vox Dei</p>
+                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Why Vox Dei</p>
               </div>
 
               <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-start">
@@ -488,7 +488,7 @@ export default function Home() {
                     >
                       <div className="flex items-baseline justify-between gap-4">
                         <h3 className="text-base font-medium tracking-[-0.02em] sm:text-lg">{item.name}</h3>
-                        <span className="shrink-0 text-[10px] uppercase tracking-[0.25em] text-black/45 dark:text-white/45">{item.duration}</span>
+                        <span className="shrink-0 text-[10px] uppercase tracking-[0.25em] text-brand">{item.duration}</span>
                       </div>
                       <p className="mt-3 text-sm leading-[1.85] text-black/60 dark:text-white/60">{item.body}</p>
                     </article>
@@ -504,7 +504,7 @@ export default function Home() {
             <div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
 
               <div className="lg:sticky lg:top-24 lg:self-start" data-aos="fade-up">
-                <p className="text-[10px] uppercase tracking-[0.35em] text-black/45 dark:text-white/45">Start here</p>
+                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Start here</p>
               </div>
 
               <div className="grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:items-start">
