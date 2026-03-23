@@ -114,14 +114,14 @@ export default function Home() {
           </header>
 
           {/* ─── Hero ───────────────────────────────────────────── */}
-          <section id="top" className="scroll-mt-20 pb-16 pt-20 sm:pb-20 sm:pt-28 lg:pt-36">
+          <section id="top" className="scroll-mt-20 pb-16 pt-10 sm:pb-20 sm:pt-28 lg:pt-36">
             <div data-aos="fade-up">
               <p className="text-[11px] uppercase tracking-[0.35em] text-brand">
                 Venture studio · product partner · technical direction
               </p>
-              <h1 className="mt-7 text-[4rem] font-medium leading-[0.86] tracking-[-0.055em] sm:text-[6.5rem] lg:text-[8.5rem]">
+              <h1 className="mt-7 text-[3.2rem] font-medium leading-[0.9] tracking-[-0.055em] sm:text-[6.5rem] sm:leading-[0.86] lg:text-[8.5rem]">
                 Beautifully judged
-                <span className="mt-1 block font-serif font-normal italic tracking-[-0.02em] text-black/55 dark:text-white/55">
+                <span className="mt-2 block font-serif font-normal italic tracking-[-0.02em] text-black/55 dark:text-white/55 sm:mt-1">
                   digital products.
                 </span>
               </h1>
@@ -133,20 +133,13 @@ export default function Home() {
                 Vox Dei Studio works with founders and operators shaping products, systems, and AI-native workflows where the standard is not just speed — it is taste, clarity, and execution that holds up.
               </p>
 
-              <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Link
-                  href="/work"
-                  className="inline-flex items-center gap-2.5 border border-black/35 dark:border-white/35 px-6 py-3 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-all duration-200 hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black"
-                >
-                  Explore work
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
+              <div className="mt-9">
                 <a
                   href="#contact"
-                  className="group inline-flex items-center gap-2.5 px-2 text-[11px] uppercase tracking-[0.22em] text-black/55 dark:text-white/55 transition-colors hover:text-black dark:hover:text-white"
+                  className="inline-flex w-full items-center justify-between border border-black/35 dark:border-white/35 px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-all duration-200 hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black sm:w-auto sm:justify-start sm:py-3"
                 >
                   Start a conversation
-                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </a>
               </div>
             </div>

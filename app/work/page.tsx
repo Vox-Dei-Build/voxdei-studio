@@ -79,8 +79,7 @@ export default function WorkPage() {
             </h1>
             <GradientRule className="mt-10 max-w-sm" />
             <p className="mt-8 max-w-xl text-base leading-[1.9] text-black/65 dark:text-white/65">
-              {portfolioItems.length} projects across enterprise platforms, AI workspaces, mobile commerce,
-              healthcare, hospitality, and brand — in South Africa, Europe, and beyond.
+A selection of the work we're proud to talk about — across enterprise platforms, AI workspaces, mobile commerce, healthcare, hospitality, and brand. South Africa, Europe, and beyond.
             </p>
           </div>
         </section>
@@ -119,14 +118,6 @@ export default function WorkPage() {
                     </div>
                   )}
 
-                  {/* Case study badge */}
-                  {item.slug && (
-                    <div className="absolute right-5 top-5">
-                      <span className="border border-white/20 bg-black/60 px-2.5 py-1 text-[9px] uppercase tracking-[0.28em] text-white/60 backdrop-blur-sm">
-                        Case study
-                      </span>
-                    </div>
-                  )}
                 </div>
 
                 {/* Info */}
@@ -136,27 +127,23 @@ export default function WorkPage() {
                     <h2 className="mt-2 text-base font-medium tracking-[-0.02em] sm:text-lg">{item.name}</h2>
                     <p className="mt-3 text-sm leading-[1.75] text-black/50 dark:text-white/50">{item.summary}</p>
                   </div>
-                  {(item.slug || item.liveUrl) && (
-                    <div className="flex items-center justify-between gap-4">
-                      {item.slug && (
-                        <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-black/35 dark:text-white/35 transition-colors duration-300 group-hover:text-black/60 dark:group-hover:text-white/60">
-                          Read case study
-                          <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
-                        </div>
-                      )}
-                      {item.liveUrl && (
-                        <a
-                          href={item.liveUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="relative z-20 flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-black/35 dark:text-white/35 transition-colors hover:text-black/70 dark:hover:text-white/70"
-                        >
-                          {item.liveLabel ?? "View live"}
-                          <ExternalLink className="h-3 w-3" />
-                        </a>
-                      )}
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-black/35 dark:text-white/35 transition-colors duration-300 group-hover:text-black/60 dark:group-hover:text-white/60">
+                      Read case study
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
                     </div>
-                  )}
+                    {item.liveUrl && (
+                      <a
+                        href={item.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="relative z-20 flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-black/35 dark:text-white/35 transition-colors hover:text-black/70 dark:hover:text-white/70"
+                      >
+                        View live
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -181,7 +168,7 @@ export default function WorkPage() {
               </p>
               <Link
                 href="/#contact"
-                className="inline-flex items-center gap-2.5 border border-black/25 dark:border-white/25 px-6 py-3 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-all hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black"
+                className="inline-flex w-full items-center justify-between gap-2.5 border border-black/25 dark:border-white/25 px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-all hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black sm:w-auto sm:justify-start sm:py-3"
               >
                 Start a conversation
                 <ArrowRight className="h-3.5 w-3.5" />

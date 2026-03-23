@@ -99,7 +99,7 @@ export default async function CaseStudyPage({
 
             <div className="flex items-center gap-6">
               <Link
-                href="/#work"
+                href="/work"
                 className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-black/50 dark:text-white/50 transition-colors hover:text-black dark:hover:text-white"
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
@@ -169,7 +169,7 @@ export default async function CaseStudyPage({
                   href={study.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="group mt-10 inline-flex items-center gap-2.5 border border-black/25 dark:border-white/25 px-5 py-3 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-all hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black"
+                  className="group mt-10 inline-flex w-full items-center justify-between gap-2.5 border border-black/25 dark:border-white/25 px-5 py-4 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-all hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black sm:w-auto sm:justify-start sm:py-3"
                 >
                   {study.liveLabel ?? "View live"}
                   <ExternalLink className="h-3.5 w-3.5" />
@@ -287,7 +287,7 @@ export default async function CaseStudyPage({
               </p>
               <Link
                 href="/#contact"
-                className="inline-flex items-center gap-2.5 border border-black/25 dark:border-white/25 px-6 py-3 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-all hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black"
+                className="inline-flex w-full items-center justify-between gap-2.5 border border-black/25 dark:border-white/25 px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-all hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black sm:w-auto sm:justify-start sm:py-3"
               >
                 Start a conversation
                 <ArrowRight className="h-3.5 w-3.5" />

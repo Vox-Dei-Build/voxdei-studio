@@ -57,7 +57,7 @@ export function MobileMenu() {
             className="group flex items-center justify-between border-b border-black/8 dark:border-white/8 py-7 text-[2rem] font-medium tracking-[-0.03em] text-black/70 dark:text-white/70 transition-colors hover:text-black dark:hover:text-white sm:text-[2.5rem]"
           >
             {link.label}
-            <span className="text-[11px] uppercase tracking-[0.25em] text-black/25 dark:text-white/25 transition-colors group-hover:text-black/50 dark:group-hover:text-white/50">
+            <span className="text-[11px] uppercase tracking-[0.25em] text-brand/50 transition-colors group-hover:text-brand">
               0{i + 1}
             </span>
           </a>

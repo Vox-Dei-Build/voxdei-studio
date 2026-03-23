@@ -166,7 +166,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={!canSubmit || status === "submitting"}
-            className="inline-flex shrink-0 items-center gap-2.5 border border-black/25 dark:border-white/25 px-6 py-3 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-all duration-200 hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black disabled:cursor-not-allowed disabled:opacity-30"
+            className="inline-flex w-full items-center justify-between gap-2.5 border border-black/25 dark:border-white/25 px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-all duration-200 hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black disabled:cursor-not-allowed disabled:opacity-30 sm:w-auto sm:justify-start sm:py-3"
           >
             {status === "submitting" ? "Sending…" : "Send inquiry"}
             <ArrowRight className="h-3.5 w-3.5" />
