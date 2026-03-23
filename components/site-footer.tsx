@@ -4,7 +4,7 @@ function GradientRule() {
   return (
     <div
       aria-hidden="true"
-      className="h-px w-full bg-linear-to-r from-transparent via-black/20 dark:via-white/20 to-transparent"
+      className="h-px w-full bg-linear-to-r from-transparent via-brand/30 to-transparent"
     />
   )
 }
@@ -16,7 +16,7 @@ export function SiteFooter() {
       <div className="mt-10 flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex flex-col gap-3">
           <p className="text-[10px] uppercase tracking-[0.3em] text-black/40 dark:text-white/40">© {new Date().getFullYear()} Vox Dei Studio</p>
-          <p className="text-[10px] uppercase tracking-[0.25em] text-black/25 dark:text-white/25">South Africa · Europe</p>
+          <p className="text-[10px] uppercase tracking-[0.25em] text-black/25 dark:text-white/25">Africa · Europe</p>
         </div>
         <nav className="flex flex-wrap gap-6 text-[10px] uppercase tracking-[0.25em] text-black/35 dark:text-white/35">
           <Link href="/#studio" className="transition-colors hover:text-black/70 dark:hover:text-white/70">Studio</Link>

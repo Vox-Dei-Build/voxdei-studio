@@ -161,7 +161,7 @@ export default function Home() {
                 { term: "What we are", desc: "Product, design, and engineering — one senior team" },
                 { term: "Who we serve", desc: "Founders and operators with real stakes" },
                 { term: "The standard", desc: "Taste, clarity, and execution that holds" },
-                { term: "Operating in", desc: "South Africa · Europe" },
+                { term: "Operating in", desc: "Africa · Europe" },
               ].map((item) => (
                 <div key={item.term} className="bg-white dark:bg-black px-5 py-5 sm:px-6">
                   <dt className="text-[10px] uppercase tracking-[0.3em] text-brand">{item.term}</dt>
@@ -177,8 +177,9 @@ export default function Home() {
             <div className="overflow-hidden">
               <div className="animate-marquee flex min-w-max items-center gap-14 sm:gap-18">
                 {logoRow.map((logo, index) => (
-                  <div
+                  <Link
                     key={`${logo.name}-${index}`}
+                    href={`/work/${logo.slug}`}
                     className="flex h-10 w-24 items-center justify-center opacity-35 transition-opacity duration-300 hover:opacity-70"
                   >
                     <Image
@@ -188,7 +189,7 @@ export default function Home() {
                       height={40}
                       className="max-h-8 w-auto object-contain brightness-0 dark:invert"
                     />
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -545,7 +546,7 @@ export default function Home() {
             <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
               <div className="flex flex-col gap-3">
                 <p className="text-[10px] uppercase tracking-[0.3em] text-black/40 dark:text-white/40">© {new Date().getFullYear()} Vox Dei Studio</p>
-                <p className="text-[10px] uppercase tracking-[0.25em] text-black/25 dark:text-white/25">South Africa · Europe</p>
+                <p className="text-[10px] uppercase tracking-[0.25em] text-black/25 dark:text-white/25">Africa · Europe</p>
               </div>
               <nav className="flex flex-wrap gap-6 text-[10px] uppercase tracking-[0.25em] text-black/35 dark:text-white/35">
                 <a href="#studio" className="transition-colors hover:text-black/70 dark:hover:text-white/70">Studio</a>

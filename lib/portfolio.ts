@@ -66,6 +66,7 @@ export const portfolioItems: PortfolioItem[] = [
     liveLabel: "View Athaus",
   },
   {
+    slug: "doctorly",
     name: "Doctorly",
     category: "Healthcare platform · Germany",
     summary:
@@ -75,6 +76,7 @@ export const portfolioItems: PortfolioItem[] = [
     liveUrl: "https://www.doctorly.de/",
   },
   {
+    slug: "skin-renewal",
     name: "Skin Renewal",
     category: "Medical aesthetics · South Africa",
     summary:
@@ -84,6 +86,7 @@ export const portfolioItems: PortfolioItem[] = [
     liveUrl: "https://www.skinrenewal.co.za/",
   },
   {
+    slug: "bright-plan",
     name: "Bright Plan",
     category: "Financial wellness · United States",
     summary:
@@ -93,6 +96,7 @@ export const portfolioItems: PortfolioItem[] = [
     liveUrl: "https://www.brightplan.com/",
   },
   {
+    slug: "united-exports",
     name: "United Exports",
     category: "E-commerce · South Africa",
     summary:
@@ -102,6 +106,7 @@ export const portfolioItems: PortfolioItem[] = [
     liveUrl: "https://united-exports.com/",
   },
   {
+    slug: "duram",
     name: "Duram",
     category: "Paint & coatings · South Africa",
     summary:
@@ -111,15 +116,17 @@ export const portfolioItems: PortfolioItem[] = [
     liveUrl: "https://www.duram.co.za/",
   },
   {
+    slug: "rhinotears",
     name: "Rhinotears",
-    category: "Eye care · South Africa",
+    category: "Cause brand · South Africa",
     summary:
-      "Product and brand platform for a specialist eye care company — clinical credibility made accessible to everyday patients.",
+      "Digital presence for a wine brand born out of a conservation crisis — every bottle sold funds the fight against rhino poaching in South Africa's national parks.",
     image: "/screenshots/rhinotears.png",
     logo: "/logos/rhinotears.png",
     liveUrl: "https://www.rhinotears.com/",
   },
   {
+    slug: "roomking",
     name: "Roomking",
     category: "Hospitality · South Africa",
     summary:
@@ -129,24 +136,27 @@ export const portfolioItems: PortfolioItem[] = [
     liveUrl: "https://roomking.com/za",
   },
   {
+    slug: "bright-africa",
     name: "Bright Africa",
-    category: "EdTech · Africa",
+    category: "Research platform · Africa",
     summary:
-      "EdTech platform expanding access to quality education content across Africa — designed for constrained connectivity and diverse learner contexts.",
+      "Digital platform for Riscura's Bright Africa research — presenting investment insights and data on African markets to a professional audience.",
     image: "/screenshots/brightafrica.png",
     logo: "/logos/brightafrica.png",
     liveUrl: "https://brightafrica.riscura.com/",
   },
   {
+    slug: "platinumseed",
     name: "Platinumseed",
-    category: "Venture capital · South Africa",
+    category: "Digital agency · South Africa",
     summary:
-      "Platform and portfolio visibility for a South African VC firm — translating investment discipline into a credible digital presence.",
+      "Digital platform for a South African digital agency — a presence that reflects the quality of work they deliver for their own clients.",
     image: "/screenshots/platinumseed.png",
     logo: "/logos/platinumseed.png",
     liveUrl: "https://www.platinumseed.com/",
   },
   {
+    slug: "koekie",
     name: "Koekie",
     category: "Consumer brand · South Africa",
     summary:
@@ -156,6 +166,7 @@ export const portfolioItems: PortfolioItem[] = [
     liveUrl: "https://koekie.co.za/",
   },
   {
+    slug: "russian-bear",
     name: "Russian Bear",
     category: "Brand · South Africa",
     summary:
@@ -165,6 +176,7 @@ export const portfolioItems: PortfolioItem[] = [
     liveUrl: "https://www.russianbear.co.za/",
   },
   {
+    slug: "true-blue",
     name: "True Blue",
     category: "Brand & commerce · Caribbean",
     summary:
@@ -174,6 +186,7 @@ export const portfolioItems: PortfolioItem[] = [
     liveUrl: "https://truebluecw.com/",
   },
   {
+    slug: "linphone",
     name: "Linphone",
     category: "VoIP & communications",
     summary:
