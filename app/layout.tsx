@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist, Geist_Mono, Cormorant_Garamond } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script"
 import { AOSInit } from "@/components/aos-init"
@@ -8,36 +8,40 @@ import { CookieBanner } from "@/components/cookie-banner"
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const _geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
+const _geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+})
 
 const siteUrl = "https://studio.voxdei.io"
 const siteName = "Vox Dei Studio"
 const siteDescription =
-  "Vox Dei Studio is a boutique product and venture studio — product, design, and engineering in one senior team, for founders and operators building things that need to hold up."
+  "Senior product judgment, beautifully executed. Vox Dei Studio is product, design, and engineering in one senior team — for founders and operators building things that have to hold."
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Vox Dei Studio — Beautifully judged digital products",
+    default: "Vox Dei Studio — Senior product judgment, beautifully executed",
     template: "%s | Vox Dei Studio",
   },
   description: siteDescription,
   keywords: [
     "Product Studio",
-    "Venture Studio",
-    "Boutique Product Agency",
-    "AI-native Product Development",
-    "Mobile-first Design",
-    "WhatsApp Commerce",
-    "Senior Product Partner",
-    "Startup Product Studio",
     "Product Design and Engineering",
-    "South Africa Tech Studio",
-    "Enterprise Product Delivery",
-    "Digital Product Strategy",
-    "UX Design Studio",
+    "Senior Product Partner",
     "Technical Product Partner",
+    "Digital Product Strategy",
+    "Product Strategy",
+    "Enterprise Product Delivery",
+    "UX Design Studio",
+    "Full-stack Product Team",
+    "South Africa Tech Studio",
+    "Boutique Product Agency",
+    "Mobile-first Design",
   ],
   authors: [{ name: "Vox Dei Studio" }],
   creator: "Vox Dei Studio",
@@ -63,22 +67,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName,
-    title: "Vox Dei Studio — Beautifully judged digital products",
+    title: "Vox Dei Studio — Senior product judgment, beautifully executed",
     description: siteDescription,
-    images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Vox Dei Studio — Beautifully judged digital products",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vox Dei Studio — Beautifully judged digital products",
+    title: "Vox Dei Studio — Senior product judgment, beautifully executed",
     description: siteDescription,
-    images: [`${siteUrl}/og-image.png`],
   },
   alternates: {
     canonical: siteUrl,
@@ -95,7 +90,7 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
       </head>
-      <body className="bg-white dark:bg-black font-sans antialiased">
+      <body className={`bg-white dark:bg-black font-sans antialiased ${_geist.variable} ${_geistMono.variable} ${cormorant.variable}`}>
         <ThemeProvider />
         <AOSInit />
         {children}
