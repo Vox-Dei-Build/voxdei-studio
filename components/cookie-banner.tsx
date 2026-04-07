@@ -1,79 +1,56 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { Button } from "./ui/button";
-import { X } from "lucide-react";
+import { useState, useEffect } from "react"
+import Link from "next/link"
 
 export function CookieBanner() {
-  const [showBanner, setShowBanner] = useState(false);
+  const [show, setShow] = useState(false)
 
   useEffect(() => {
-    // Check if user has already made a choice
-    const cookieConsent = localStorage.getItem("cookie-consent");
-    if (!cookieConsent) {
-      setShowBanner(true);
+    if (!localStorage.getItem("cookie-consent")) {
+      setShow(true)
     }
-  }, []);
+  }, [])
 
-  const acceptCookies = () => {
-    localStorage.setItem("cookie-consent", "accepted");
-    setShowBanner(false);
-    // You can add analytics initialization here
-    // Example: window.gtag('consent', 'update', { analytics_storage: 'granted' });
-  };
+  const accept = () => {
+    localStorage.setItem("cookie-consent", "accepted")
+    setShow(false)
+  }
 
-  const declineCookies = () => {
-    localStorage.setItem("cookie-consent", "declined");
-    setShowBanner(false);
-    // You can add analytics opt-out here
-  };
+  const decline = () => {
+    localStorage.setItem("cookie-consent", "declined")
+    setShow(false)
+  }
 
-  if (!showBanner) return null;
+  if (!show) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-3 sm:p-6 animate-in slide-in-from-bottom duration-300">
-      <div className="container mx-auto max-w-6xl">
-        <div className="relative bg-background border border-border rounded-lg shadow-lg p-4 sm:p-6">
-          <button
-            onClick={declineCookies}
-            className="absolute top-3 right-3 sm:top-4 sm:right-4 text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="Close cookie banner"
+    <div className="fixed bottom-5 left-5 right-5 z-50 sm:left-auto sm:right-6 sm:bottom-6 sm:max-w-sm animate-in slide-in-from-bottom-4 duration-500">
+      <div className="border border-black/8 dark:border-white/8 bg-stone-50 dark:bg-neutral-950 backdrop-blur-md p-5 shadow-lg shadow-black/5 dark:shadow-black/30">
+        <p className="text-[12px] leading-[1.7] text-black/50 dark:text-white/45">
+          This site uses cookies for analytics.{" "}
+          <Link
+            href="/privacy"
+            className="text-black/70 dark:text-white/60 underline underline-offset-2 transition-colors hover:text-black dark:hover:text-white"
           >
-            <X className="h-5 w-5 sm:h-4 sm:w-4" />
+            Privacy
+          </Link>
+        </p>
+        <div className="flex gap-3 mt-4">
+          <button
+            onClick={decline}
+            className="text-[10px] uppercase tracking-[0.2em] text-black/30 dark:text-white/30 transition-colors hover:text-black dark:hover:text-white"
+          >
+            Decline
           </button>
-
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pr-10 sm:pr-8">
-            <div className="flex-1">
-              <h3 className="text-base sm:text-sm font-semibold mb-2">Cookie Notice</h3>
-              <p className="text-sm sm:text-sm text-muted-foreground leading-relaxed">
-                We use cookies to enhance your browsing experience, analyze site
-                traffic, and personalize content. By clicking "Accept", you
-                consent to our use of cookies.{" "}
-                <Link
-                  href="/privacy"
-                  className="underline hover:text-foreground transition-colors"
-                >
-                  Learn more
-                </Link>
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto sm:shrink-0">
-              <Button
-                variant="outline"
-                onClick={declineCookies}
-                className="w-full sm:w-auto min-w-25"
-              >
-                Decline
-              </Button>
-              <Button onClick={acceptCookies} className="w-full sm:w-auto min-w-25">
-                Accept
-              </Button>
-            </div>
-          </div>
+          <button
+            onClick={accept}
+            className="border border-black/15 dark:border-white/15 px-3.5 py-1.5 text-[10px] uppercase tracking-[0.2em] text-black/70 dark:text-white/70 transition-all hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black"
+          >
+            Accept
+          </button>
         </div>
       </div>
     </div>
-  );
+  )
 }

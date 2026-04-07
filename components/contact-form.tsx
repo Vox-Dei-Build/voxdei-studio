@@ -78,11 +78,11 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col gap-5 border border-black/10 dark:border-white/10 p-8 sm:p-10">
-        <CheckCircle className="h-6 w-6 text-black/60 dark:text-white/60" />
+      <div className="flex flex-col gap-5 border border-black/8 dark:border-white/8 p-8 sm:p-10" role="status" aria-live="polite">
+        <CheckCircle className="h-5 w-5 text-brand" />
         <div>
-          <p className="text-base font-medium tracking-[-0.02em]">Inquiry received.</p>
-          <p className="mt-2 text-sm leading-[1.85] text-black/55 dark:text-white/55">
+          <p className="text-[15px] font-medium tracking-[-0.02em]">Inquiry received.</p>
+          <p className="mt-2 text-[13px] leading-[1.9] text-black/60 dark:text-white/60">
             We read every message and will come back to you within a couple of days if there is a fit.
           </p>
         </div>
@@ -94,29 +94,34 @@ export function ContactForm() {
     <>
       <Script src="https://web3forms.com/client/script.js" async />
 
-      <form onSubmit={handleSubmit} className="space-y-7">
-        {/* Honeypot — invisible to humans, filled by bots */}
+      <form onSubmit={handleSubmit} className="space-y-8" noValidate>
         <input type="checkbox" name="botcheck" className="hidden" aria-hidden="true" />
 
-        <div className="grid gap-7 sm:grid-cols-2">
+        <div className="grid gap-8 sm:grid-cols-2">
           <label className="block">
-            <span className="mb-3 block text-[10px] uppercase tracking-[0.3em] text-black/55 dark:text-white/55">Name</span>
+            <span className="mb-3 block text-[10px] uppercase tracking-[0.3em] text-black/55 dark:text-white/55">Name <span className="text-brand/60">*</span></span>
             <Input
               value={form.name}
               onChange={(event) => update("name", event.target.value)}
+              required
+              autoComplete="name"
               placeholder="Your name"
-              className="h-11 rounded-none border-x-0 border-b border-t-0 border-black/15 dark:border-white/15 bg-transparent px-0 text-black dark:text-white placeholder:text-black/30 dark:placeholder:text-white/30 focus-visible:border-black/40 dark:focus-visible:border-white/40 focus-visible:ring-0"
+              aria-required="true"
+              className="h-11 rounded-none border-x-0 border-b border-t-0 border-black/12 dark:border-white/12 bg-transparent px-0 text-black dark:text-white placeholder:text-black/25 dark:placeholder:text-white/25 focus-visible:border-brand/50 focus-visible:ring-0 transition-colors"
             />
           </label>
 
           <label className="block">
-            <span className="mb-3 block text-[10px] uppercase tracking-[0.3em] text-black/55 dark:text-white/55">Email</span>
+            <span className="mb-3 block text-[10px] uppercase tracking-[0.3em] text-black/55 dark:text-white/55">Email <span className="text-brand/60">*</span></span>
             <Input
               type="email"
               value={form.email}
               onChange={(event) => update("email", event.target.value)}
+              required
+              autoComplete="email"
               placeholder="you@company.com"
-              className="h-11 rounded-none border-x-0 border-b border-t-0 border-black/15 dark:border-white/15 bg-transparent px-0 text-black dark:text-white placeholder:text-black/30 dark:placeholder:text-white/30 focus-visible:border-black/40 dark:focus-visible:border-white/40 focus-visible:ring-0"
+              aria-required="true"
+              className="h-11 rounded-none border-x-0 border-b border-t-0 border-black/12 dark:border-white/12 bg-transparent px-0 text-black dark:text-white placeholder:text-black/25 dark:placeholder:text-white/25 focus-visible:border-brand/50 focus-visible:ring-0 transition-colors"
             />
           </label>
         </div>
@@ -126,39 +131,42 @@ export function ContactForm() {
           <Input
             value={form.company}
             onChange={(event) => update("company", event.target.value)}
+            autoComplete="organization"
             placeholder="Company or venture"
-            className="h-11 rounded-none border-x-0 border-b border-t-0 border-black/15 dark:border-white/15 bg-transparent px-0 text-black dark:text-white placeholder:text-black/30 dark:placeholder:text-white/30 focus-visible:border-black/40 dark:focus-visible:border-white/40 focus-visible:ring-0"
+            className="h-11 rounded-none border-x-0 border-b border-t-0 border-black/12 dark:border-white/12 bg-transparent px-0 text-black dark:text-white placeholder:text-black/25 dark:placeholder:text-white/25 focus-visible:border-brand/50 focus-visible:ring-0 transition-colors"
           />
         </label>
 
         <label className="block">
-          <span className="mb-3 block text-[10px] uppercase tracking-[0.3em] text-black/55 dark:text-white/55">What needs to become real?</span>
+          <span className="mb-3 block text-[10px] uppercase tracking-[0.3em] text-black/55 dark:text-white/55">What needs to become real? <span className="text-brand/60">*</span></span>
           <Textarea
             value={form.project}
             onChange={(event) => update("project", event.target.value)}
+            required
+            aria-required="true"
             placeholder="Tell us what you're building, where the pressure is, and what needs to happen next."
-            rows={5}
-            className="rounded-none border-x-0 border-b border-t-0 border-black/15 dark:border-white/15 bg-transparent px-0 text-black dark:text-white placeholder:text-black/30 dark:placeholder:text-white/30 focus-visible:border-black/40 dark:focus-visible:border-white/40 focus-visible:ring-0"
+            rows={4}
+            className="rounded-none border-x-0 border-b border-t-0 border-black/12 dark:border-white/12 bg-transparent px-0 text-black dark:text-white placeholder:text-black/25 dark:placeholder:text-white/25 focus-visible:border-brand/50 focus-visible:ring-0 transition-colors"
           />
         </label>
 
-        {/* hCaptcha — rendered automatically by web3forms script */}
-        <div className="h-captcha" data-captcha="true" />
+        {/* hCaptcha — compact, subdued */}
+        <div className="h-captcha opacity-60 transition-opacity hover:opacity-100" data-captcha="true" />
         {captchaError && (
-          <p className="text-xs text-black/50 dark:text-white/50">Please complete the captcha before sending.</p>
+          <p className="text-[11px] text-brand/80" role="alert">Please complete the verification above.</p>
         )}
 
-        <div className="flex flex-col gap-4 pt-1 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
           {status === "error" ? (
-            <p className="flex items-center gap-2 text-xs text-black/50 dark:text-white/50">
-              <AlertCircle className="h-3.5 w-3.5 shrink-0" />
-              Something went wrong. Email us directly at{" "}
+            <p className="flex items-center gap-2 text-[12px] text-black/60 dark:text-white/60" role="alert">
+              <AlertCircle className="h-3.5 w-3.5 shrink-0 text-brand" />
+              Something went wrong.{" "}
               <a href="mailto:hello@voxdei.io" className="text-black/70 dark:text-white/70 underline underline-offset-2">
                 hello@voxdei.io
               </a>
             </p>
           ) : (
-            <p className="text-xs leading-[1.8] text-black/40 dark:text-white/40">
+            <p className="text-[11px] leading-[1.8] text-black/40 dark:text-white/40">
               We respond within a few days if there is a fit.
             </p>
           )}
@@ -166,9 +174,9 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={!canSubmit || status === "submitting"}
-            className="inline-flex w-full items-center justify-between gap-2.5 border border-black/25 dark:border-white/25 px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-all duration-200 hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black disabled:cursor-not-allowed disabled:opacity-30 sm:w-auto sm:justify-start sm:py-3"
+            className="inline-flex w-full items-center justify-between gap-3 border border-black/20 dark:border-white/20 px-6 py-3.5 text-[10.5px] uppercase tracking-[0.22em] text-black dark:text-white transition-all duration-200 hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black disabled:cursor-not-allowed disabled:opacity-25 sm:w-auto sm:justify-start sm:py-3"
           >
-            {status === "submitting" ? "Sending…" : "Send inquiry"}
+            {status === "submitting" ? "Sending\u2026" : "Send inquiry"}
             <ArrowRight className="h-3.5 w-3.5" />
           </button>
         </div>

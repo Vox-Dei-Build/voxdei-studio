@@ -7,7 +7,7 @@ export function StructuredData() {
     url: "https://studio.voxdei.io",
     logo: "https://studio.voxdei.io/logo-vd.png",
     description:
-      "Senior venture and product partner for founders and operators building AI-native products, operational systems, and mobile-first platforms.",
+      "Senior product judgment, beautifully executed. Product, design, and engineering in one senior team — for founders and operators building things that have to hold.",
     foundingDate: "2014",
     address: {
       "@type": "PostalAddress",
@@ -25,7 +25,7 @@ export function StructuredData() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Senior Product and Venture Delivery",
+    serviceType: "Senior Product Design and Engineering",
     provider: {
       "@type": "Organization",
       name: "Vox Dei Studio",
@@ -42,16 +42,8 @@ export function StructuredData() {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "AI-native Product Development",
-            description: "Designing and shipping AI-native products, workflows, and operational systems.",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Operational Platform Builds",
-            description: "Building internal and customer-facing software systems with senior execution and enterprise discipline.",
+            name: "Studio Sprint",
+            description: "Repositioning, validation, focused product slices, and high-stakes resets — delivered in 4 to 8 weeks.",
           },
         },
         {
@@ -59,7 +51,7 @@ export function StructuredData() {
           itemOffered: {
             "@type": "Service",
             name: "Launch Partner",
-            description: "Helping founders and teams shape, build, and launch serious digital products.",
+            description: "A senior partner driving quality and momentum through go-live, across 8 to 16 weeks.",
           },
         },
         {
@@ -67,7 +59,7 @@ export function StructuredData() {
           itemOffered: {
             "@type": "Service",
             name: "Technical Partner",
-            description: "Senior technical partnership across product judgment, architecture, delivery, and execution oversight.",
+            description: "Ongoing senior judgment across architecture, delivery pressure, and product evolution.",
           },
         },
       ],
@@ -80,7 +72,7 @@ export function StructuredData() {
     name: "Vox Dei Studio",
     url: "https://studio.voxdei.io",
     description:
-      "Credible products for serious teams. Vox Dei Studio helps founders and operators build AI-native products, operational systems, and mobile-first platforms.",
+      "Senior product judgment, beautifully executed. Vox Dei Studio is product, design, and engineering in one senior team — for founders and operators building things that have to hold.",
     publisher: {
       "@type": "Organization",
       name: "Vox Dei Studio",

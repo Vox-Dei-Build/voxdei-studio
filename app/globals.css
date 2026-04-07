@@ -5,7 +5,8 @@
 
 :root {
   --brand: #B5603A;
-  --background: oklch(0.99 0 0);
+  --brand-glow: #D4805A;
+  --background: oklch(0.985 0.002 80);
   --foreground: oklch(0.05 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.1 0 0);
@@ -24,62 +25,39 @@
   --border: oklch(0.92 0 0);
   --input: oklch(0.92 0 0);
   --ring: oklch(0.1 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.5rem;
-  --sidebar: oklch(0.98 0.002 106);
-  --sidebar-foreground: oklch(0.15 0.002 106);
-  --sidebar-primary: oklch(0.18 0.003 106);
-  --sidebar-primary-foreground: oklch(0.98 0.002 106);
-  --sidebar-accent: oklch(0.95 0.002 106);
-  --sidebar-accent-foreground: oklch(0.18 0.003 106);
-  --sidebar-border: oklch(0.9 0.002 106);
-  --sidebar-ring: oklch(0.18 0.003 106);
 }
 
 .dark {
   --brand: #D4805A;
-  --background: oklch(0 0 0);
+  --brand-glow: #E8956E;
+  --background: oklch(0.1 0.005 60);
   --foreground: oklch(0.98 0 0);
-  --card: oklch(0.14 0.002 106);
-  --card-foreground: oklch(0.98 0.002 106);
-  --popover: oklch(0.14 0.002 106);
-  --popover-foreground: oklch(0.98 0.002 106);
-  --primary: oklch(0.98 0.002 106);
-  --primary-foreground: oklch(0.18 0.003 106);
-  --secondary: oklch(0.2 0.002 106);
-  --secondary-foreground: oklch(0.98 0.002 106);
-  --muted: oklch(0.2 0.002 106);
-  --muted-foreground: oklch(0.6 0.002 106);
-  --accent: oklch(0.85 0.002 106);
-  --accent-foreground: oklch(0.1 0.002 106);
+  --card: oklch(0.14 0.005 60);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.14 0.005 60);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.98 0 0);
+  --primary-foreground: oklch(0.1 0.005 60);
+  --secondary: oklch(0.17 0.004 60);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.17 0.004 60);
+  --muted-foreground: oklch(0.6 0 0);
+  --accent: oklch(0.85 0 0);
+  --accent-foreground: oklch(0.1 0.005 60);
   --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.98 0.002 106);
-  --border: oklch(0.2 0.002 106);
-  --input: oklch(0.2 0.002 106);
-  --ring: oklch(0.85 0.002 106);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.14 0.002 106);
-  --sidebar-foreground: oklch(0.98 0.002 106);
-  --sidebar-primary: oklch(0.85 0.002 106);
-  --sidebar-primary-foreground: oklch(0.1 0.002 106);
-  --sidebar-accent: oklch(0.2 0.002 106);
-  --sidebar-accent-foreground: oklch(0.98 0.002 106);
-  --sidebar-border: oklch(0.2 0.002 106);
-  --sidebar-ring: oklch(0.85 0.002 106);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.2 0.004 60);
+  --input: oklch(0.2 0.004 60);
+  --ring: oklch(0.85 0 0);
 }
 
 @theme inline {
   --color-brand: var(--brand);
-  --font-sans: "Geist", "Geist Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-brand-glow: var(--brand-glow);
+  --font-sans: var(--font-geist, "Geist", "Geist Fallback", system-ui, sans-serif);
+  --font-mono: var(--font-geist-mono, "Geist Mono", "Geist Mono Fallback", monospace);
+  --font-serif: var(--font-serif, "Cormorant Garamond", "Georgia", serif);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -99,23 +77,10 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 @layer base {
@@ -126,17 +91,12 @@
     @apply bg-background text-foreground;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     @apply text-balance;
   }
 }
 
-/* Smooth scroll behavior */
+/* Smooth scroll */
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -148,84 +108,51 @@ body {
 
 /* Mobile menu overlay — theme-aware */
 .mobile-menu-overlay {
-  background-color: white;
+  background-color: #f5f5f4; /* stone-50 */
 }
 .dark .mobile-menu-overlay {
-  background-color: black;
+  background-color: #0a0a0a; /* neutral-950 */
 }
 
-/* Infinite marquee scroll animation */
+/* ─── Marquee ─────────────────────────────── */
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes drift {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(4px);
-  }
-}
-
-@keyframes glow-pulse {
-  0%,
-  100% {
-    opacity: 0.75;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.015);
-  }
-}
-
-@keyframes float-slow {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes float-delayed {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(-1deg);
-  }
-  50% {
-    transform: translateY(8px) rotate(1deg);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 40s linear infinite;
 }
-
 .animate-marquee:hover {
   animation-play-state: paused;
 }
 
-.animate-drift {
-  animation: drift 6s ease-in-out infinite;
+/* ─── Reduced motion ──────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .animate-marquee,
+  [data-aos] {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Disable AOS entirely */
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
-.animate-glow-pulse {
-  animation: glow-pulse 8s ease-in-out infinite;
+/* ─── Focus ───────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }
 
-.animate-float-slow {
-  animation: float-slow 8s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-  animation: float-delayed 9s ease-in-out infinite;
+/* ─── Serif display utility ───────────────── */
+.font-display-serif {
+  font-family: var(--font-serif, "Cormorant Garamond", "Georgia", serif);
 }
