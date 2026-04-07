@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react"
 import { caseStudies } from "@/lib/case-studies"
 import { SiteFooter } from "@/components/site-footer"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { SiteHeader } from "@/components/site-header"
 import type { Metadata } from "next"
 
 export function generateStaticParams() {
@@ -76,7 +76,7 @@ export default async function CaseStudyPage({
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudySchema) }} />
-    <main className="relative min-h-screen overflow-hidden bg-white dark:bg-black text-black dark:text-white">
+    <main className="relative min-h-screen overflow-hidden bg-stone-50 dark:bg-neutral-950 text-black dark:text-white" id="main-content">
 
       {/* Page-level radial glow */}
       <div
@@ -84,38 +84,21 @@ export default async function CaseStudyPage({
         className="pointer-events-none absolute inset-x-0 top-0 h-220 bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(181,96,58,0.06),transparent)] dark:bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(212,128,90,0.07),transparent)]"
       />
 
-      <div className="relative mx-auto max-w-336 px-6 sm:px-10 lg:px-16">
+      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
 
         {/* ─── Header ─────────────────────────────────────────── */}
-        <header className="sticky top-0 z-40 bg-white/96 dark:bg-black/96 backdrop-blur-sm">
-          <div className="flex items-center justify-between border-b border-black/10 dark:border-white/10 py-5">
+        <SiteHeader />
 
-            <Link href="/" className="flex items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-black dark:text-white">
-              <span className="inline-flex h-8 w-8 items-center justify-center border border-black/30 dark:border-white/30 text-[10px] font-medium tracking-[0.32em]">
-                VD
-              </span>
-              Vox Dei Studio
-            </Link>
-
-            <div className="flex items-center gap-6">
-              <Link
-                href="/work"
-                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-black/50 dark:text-white/50 transition-colors hover:text-black dark:hover:text-white"
-              >
-                <ArrowLeft className="h-3.5 w-3.5" />
-                All work
-              </Link>
-              <ThemeToggle />
-              <Link
-                href="/#contact"
-                className="hidden border border-black/25 dark:border-white/25 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-black/80 dark:text-white/80 transition-all hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black sm:inline-flex"
-              >
-                Start here
-              </Link>
-            </div>
-
-          </div>
-        </header>
+        {/* Breadcrumb */}
+        <div className="pt-6">
+          <Link
+            href="/work"
+            className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-black/40 dark:text-white/40 transition-colors hover:text-black dark:hover:text-white"
+          >
+            <ArrowLeft className="h-3 w-3" />
+            All work
+          </Link>
+        </div>
 
         {/* ─── Hero image ─────────────────────────────────────── */}
         <div className="mt-10 sm:mt-14" data-aos="fade-up">
@@ -160,7 +143,7 @@ export default async function CaseStudyPage({
             >
               <GradientRule className="mb-8 lg:hidden" />
               <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Signal</p>
-              <blockquote className="mt-5 text-base italic leading-[1.85] text-black/55 dark:text-white/55 sm:text-lg">
+              <blockquote className="mt-5 text-base italic leading-[1.85] text-black/65 dark:text-white/65 sm:text-lg">
                 &ldquo;{study.proof}&rdquo;
               </blockquote>
 
@@ -192,7 +175,7 @@ export default async function CaseStudyPage({
                 <span className="text-[10px] uppercase tracking-[0.35em] text-brand">01</span>
                 <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Challenge</p>
               </div>
-              <p className="text-sm leading-[1.95] text-black/60 dark:text-white/60 sm:text-base">
+              <p className="text-sm leading-[1.95] text-black/65 dark:text-white/65 sm:text-base">
                 {study.challenge}
               </p>
             </div>
@@ -207,7 +190,7 @@ export default async function CaseStudyPage({
                 {study.work.map((item, i) => (
                   <li
                     key={i}
-                    className="border-t border-black/10 dark:border-white/10 py-5 text-sm leading-[1.85] text-black/60 dark:text-white/60 first:border-t-0 sm:text-base"
+                    className="border-t border-black/10 dark:border-white/10 py-5 text-sm leading-[1.85] text-black/65 dark:text-white/65 first:border-t-0 sm:text-base"
                   >
                     {item}
                   </li>
@@ -225,7 +208,7 @@ export default async function CaseStudyPage({
                 {study.outcome.map((item, i) => (
                   <li
                     key={i}
-                    className="border-t border-black/10 dark:border-white/10 py-5 text-sm leading-[1.85] text-black/60 dark:text-white/60 first:border-t-0 sm:text-base"
+                    className="border-t border-black/10 dark:border-white/10 py-5 text-sm leading-[1.85] text-black/65 dark:text-white/65 first:border-t-0 sm:text-base"
                   >
                     {item}
                   </li>
@@ -249,7 +232,7 @@ export default async function CaseStudyPage({
                 src={nextStudy.image}
                 alt={nextStudy.name}
                 fill
-                className="object-cover grayscale brightness-75 transition-all duration-700 group-hover:brightness-90"
+                className="object-cover grayscale brightness-75 transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-90"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/15 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-6 p-8 sm:p-10">
@@ -275,14 +258,14 @@ export default async function CaseStudyPage({
             <div>
               <h2 className="text-[2.5rem] font-medium leading-[0.92] tracking-[-0.055em] sm:text-[3.5rem]">
                 Ready to make yours
-                <span className="mt-1 block font-serif font-normal italic text-black/50 dark:text-white/50">
+                <span className="mt-1 block font-serif font-normal italic text-black/60 dark:text-white/60">
                   real?
                 </span>
               </h2>
             </div>
             <div className="flex flex-col gap-4 sm:items-end">
               <GradientRule className="hidden sm:block" />
-              <p className="text-sm leading-[1.85] text-black/55 dark:text-white/55 sm:text-right">
+              <p className="text-sm leading-[1.85] text-black/65 dark:text-white/65 sm:text-right">
                 Bring the project that matters. We will tell you honestly whether we are the right fit.
               </p>
               <Link

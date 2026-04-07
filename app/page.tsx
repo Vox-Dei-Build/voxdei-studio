@@ -2,185 +2,79 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
-import { MobileMenu } from "@/components/mobile-menu"
+import { SiteHeader } from "@/components/site-header"
 import { StructuredData } from "@/components/structured-data"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { caseStudies, partnerLogos } from "@/lib/case-studies"
 
-const principles = [
-  {
-    number: "01",
-    title: "Senior judgment",
-    body: "A smaller senior team for product decisions that cannot afford drift, dilution, or theatre.",
-  },
-  {
-    number: "02",
-    title: "Design under pressure",
-    body: "Interfaces, systems, and journeys shaped for real operators, real rollout constraints, and real customer behavior.",
-  },
-  {
-    number: "03",
-    title: "Execution that holds up",
-    body: "Strategy, product design, and engineering kept close enough that the right ideas survive implementation.",
-  },
-]
-
-const engagements = [
-  {
-    name: "Studio Sprint",
-    duration: "4–8 weeks",
-    body: "For repositioning, validation, focused product slices, and high-stakes resets.",
-  },
-  {
-    name: "Launch Partner",
-    duration: "8–16 weeks",
-    body: "For teams that need a senior partner driving quality and momentum through go-live.",
-  },
-  {
-    name: "Technical Partner",
-    duration: "Ongoing",
-    body: "For continued judgment across architecture, delivery pressure, and product evolution.",
-  },
-]
-
 const logoRow = [...partnerLogos, ...partnerLogos]
-const [featuredStudy, ...secondaryStudies] = caseStudies
-
-function GradientRule({ className = "" }: { className?: string }) {
-  return (
-    <div
-      aria-hidden="true"
-      className={`h-px w-full bg-linear-to-r from-transparent via-brand/30 to-transparent ${className}`}
-    />
-  )
-}
-
-function CaseStudyImage({ src, alt, top = false }: { src: string; alt: string; top?: boolean }) {
-  return (
-    <Image
-      src={src}
-      alt={alt}
-      fill
-      className={`object-cover grayscale brightness-75 ${top ? "object-top" : "object-center"}`}
-    />
-  )
-}
+const featuredStudies = caseStudies.slice(0, 3)
 
 export default function Home() {
   return (
     <>
       <StructuredData />
-      <main className="relative min-h-screen overflow-hidden bg-white dark:bg-black text-black dark:text-white">
+      <main className="relative min-h-screen overflow-hidden bg-stone-50 dark:bg-neutral-950 text-black dark:text-white">
 
-        {/* Page-level radial glow — barely visible, adds depth at top */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-220 bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(181,96,58,0.06),transparent)] dark:bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(212,128,90,0.07),transparent)]"
-        />
+        {/* Skip to content — accessibility */}
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-black focus:text-white focus:dark:bg-white focus:dark:text-black focus:px-4 focus:py-2 focus:text-[11px] focus:uppercase focus:tracking-[0.2em]">
+          Skip to content
+        </a>
 
-        <div className="relative mx-auto max-w-336 px-6 sm:px-10 lg:px-16">
+        <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
 
           {/* ─── Header ─────────────────────────────────────────── */}
-          <header className="sticky top-0 z-40 bg-white/96 dark:bg-black/96 backdrop-blur-sm">
-            <div className="flex items-center justify-between border-b border-black/10 dark:border-white/10 py-5">
-
-              <a href="#top" className="flex items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-black dark:text-white">
-                <span className="inline-flex h-8 w-8 items-center justify-center border border-black/30 dark:border-white/30 text-[10px] font-medium tracking-[0.32em]">
-                  VD
-                </span>
-                Vox Dei Studio
-              </a>
-
-              <nav className="hidden items-center gap-8 text-[11px] uppercase tracking-[0.2em] text-black/50 dark:text-white/50 md:flex">
-                <a href="#studio" className="transition-colors hover:text-black dark:hover:text-white">Studio</a>
-                <Link href="/work" className="transition-colors hover:text-black dark:hover:text-white">Work</Link>
-                <a href="#approach" className="transition-colors hover:text-black dark:hover:text-white">Approach</a>
-                <a href="https://www.voxdei.io/" target="_blank" rel="noreferrer" className="transition-colors hover:text-black dark:hover:text-white">Thoughts</a>
-                <a href="#contact" className="transition-colors hover:text-black dark:hover:text-white">Contact</a>
-              </nav>
-
-              <div className="flex items-center gap-4">
-                <ThemeToggle />
-                <a
-                  href="#contact"
-                  className="hidden border border-black/25 dark:border-white/25 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-black/80 dark:text-white/80 transition-all hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black md:inline-flex"
-                >
-                  Start here
-                </a>
-                <MobileMenu />
-              </div>
-
-            </div>
-          </header>
+          <SiteHeader />
 
           {/* ─── Hero ───────────────────────────────────────────── */}
-          <section id="top" className="scroll-mt-20 pb-16 pt-10 sm:pb-20 sm:pt-28 lg:pt-36">
-            <div data-aos="fade-up">
-              <p className="text-[11px] uppercase tracking-[0.35em] text-brand">
-                Venture studio · product partner · technical direction
-              </p>
-              <h1 className="mt-7 text-[3.2rem] font-medium leading-[0.9] tracking-[-0.055em] sm:text-[6.5rem] sm:leading-[0.86] lg:text-[8.5rem]">
-                Beautifully judged
-                <span className="mt-2 block font-serif font-normal italic tracking-[-0.02em] text-black/55 dark:text-white/55 sm:mt-1">
-                  digital products.
+          <section id="main-content" className="relative scroll-mt-16 pt-16 pb-0 sm:pt-24 lg:pt-32">
+            {/* Atmospheric glow — dark mode only */}
+            <div className="pointer-events-none absolute -top-32 -left-32 h-[500px] w-[600px] rounded-full bg-brand/[0.04] blur-[120px] dark:bg-brand/[0.06] sm:h-[600px] sm:w-[700px]" aria-hidden="true" />
+
+            {/* Main headline — typographic, enormous, authored */}
+            <div className="relative pb-12 sm:pb-16 lg:pb-20" data-aos="fade-up">
+              <h1 className="text-[2.6rem] font-medium leading-[0.9] tracking-[-0.045em] sm:text-[5rem] lg:text-[6.5rem] xl:text-[7.5rem]">
+                Senior product
+                <br className="hidden sm:block" />
+                {" "}judgment,
+                <br />
+                <span className="font-display-serif font-light italic tracking-[-0.02em] text-black/40 dark:text-white/40">
+                  beautifully executed.
                 </span>
               </h1>
-
-              {/* Gradient accent line below headline */}
-              <GradientRule className="mt-10 max-w-sm" />
-
-              <p className="mt-8 max-w-lg text-base leading-[1.9] text-black/65 dark:text-white/65 sm:text-lg">
-                Vox Dei Studio works with founders and operators shaping products, systems, and AI-native workflows where the standard is not just speed — it is taste, clarity, and execution that holds up.
-              </p>
-
-              <div className="mt-9">
-                <a
-                  href="#contact"
-                  className="inline-flex w-full items-center justify-between border border-black/35 dark:border-white/35 px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-all duration-200 hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black sm:w-auto sm:justify-start sm:py-3"
-                >
-                  Start a conversation
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </a>
-              </div>
             </div>
 
-            {/* Descriptor strip */}
-            <dl
-              className="mt-14 grid grid-cols-2 gap-px border border-black/10 dark:border-white/10 bg-black/10 dark:bg-white/10 sm:grid-cols-4"
-              data-aos="fade-up"
-              data-aos-delay="80"
-            >
-              {[
-                { term: "What we are", desc: "Product, design, and engineering — one senior team" },
-                { term: "Who we serve", desc: "Founders and operators with real stakes" },
-                { term: "The standard", desc: "Taste, clarity, and execution that holds" },
-                { term: "Operating in", desc: "Africa · Europe" },
-              ].map((item) => (
-                <div key={item.term} className="bg-white dark:bg-black px-5 py-5 sm:px-6">
-                  <dt className="text-[10px] uppercase tracking-[0.3em] text-brand">{item.term}</dt>
-                  <dd className="mt-2 text-sm text-black/80 dark:text-white/80">{item.desc}</dd>
-                </div>
-              ))}
-            </dl>
+            {/* Supporting — left-aligned, single column */}
+            <div className="max-w-lg pb-16 sm:pb-20 lg:pb-28" data-aos="fade-up" data-aos-delay="60">
+              <p className="text-[15px] leading-[1.9] text-black/65 dark:text-white/65">
+                Product, design, and engineering — one senior team. For founders
+                and operators building things that have to hold.
+              </p>
+              <a
+                href="#contact"
+                className="mt-8 inline-flex items-center gap-2.5 text-[10.5px] uppercase tracking-[0.22em] text-black dark:text-white transition-opacity hover:opacity-50"
+              >
+                Start a conversation
+                <ArrowRight className="h-3 w-3" />
+              </a>
+            </div>
           </section>
 
-          {/* ─── Partners ───────────────────────────────────────── */}
-          <div className="border-t border-black/10 dark:border-white/10 py-10" data-aos="fade-up">
-            <p className="mb-7 text-[10px] uppercase tracking-[0.35em] text-brand">Selected partners</p>
+          {/* ─── Logo strip — quiet credibility signal ─────────── */}
+          <div className="border-t border-black/6 dark:border-white/6 py-7 sm:py-8" data-aos="fade-up" data-aos-delay="80">
             <div className="overflow-hidden">
-              <div className="animate-marquee flex min-w-max items-center gap-14 sm:gap-18">
+              <div className="animate-marquee flex min-w-max items-center gap-14 sm:gap-20">
                 {logoRow.map((logo, index) => (
                   <Link
                     key={`${logo.name}-${index}`}
                     href={`/work/${logo.slug}`}
-                    className="flex h-10 w-24 items-center justify-center opacity-35 transition-opacity duration-300 hover:opacity-70"
+                    className="flex h-8 w-20 items-center justify-center opacity-50 transition-opacity duration-300 hover:opacity-80 dark:opacity-45 dark:hover:opacity-70"
                   >
                     <Image
                       src={logo.src}
                       alt={logo.name}
-                      width={96}
-                      height={40}
-                      className="max-h-8 w-auto object-contain brightness-0 dark:invert"
+                      width={80}
+                      height={32}
+                      className="max-h-6 w-auto object-contain brightness-0 dark:invert"
                     />
                   </Link>
                 ))}
@@ -188,371 +82,284 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ─── Studio ─────────────────────────────────────────── */}
-          <section id="studio" className="scroll-mt-20 border-t border-black/10 dark:border-white/10 py-20 sm:py-28 lg:py-36">
-            <div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
-
-              <div className="lg:sticky lg:top-24 lg:self-start" data-aos="fade-up">
-                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">The studio</p>
-              </div>
-
+          {/* ─── Work ───────────────────────────────────────────── */}
+          <section id="work" className="scroll-mt-16 pt-20 pb-20 sm:pt-28 sm:pb-28 lg:pt-36 lg:pb-36">
+            <div className="flex items-end justify-between mb-12 sm:mb-16" data-aos="fade-up">
               <div>
-                <div data-aos="fade-up" data-aos-delay="60">
-                  <h2 className="max-w-2xl text-3xl font-medium leading-[1.12] tracking-[-0.04em] sm:text-4xl lg:text-[3rem]">
-                    Taste, product judgment, and engineering discipline kept in one loop.
-                  </h2>
-                  <p className="mt-6 max-w-xl text-base leading-[1.9] text-black/65 dark:text-white/65 sm:text-lg">
-                    The value is not capability breadth on paper. It is the ability to decide well, design clearly, and execute under real operating pressure without losing the essence of the product.
-                  </p>
-                </div>
-
-                {/* Editorial principles list */}
-                <div className="mt-16">
-                  <GradientRule />
-                  {principles.map((item, index) => (
-                    <div
-                      key={item.title}
-                      className="grid gap-4 border-b border-black/10 dark:border-white/10 py-8 sm:grid-cols-[4rem_1fr_2fr] sm:items-baseline sm:gap-8"
-                      data-aos="fade-up"
-                      data-aos-delay={60 + index * 50}
-                    >
-                      <span className="text-[10px] uppercase tracking-[0.35em] text-brand">{item.number}</span>
-                      <h3 className="text-base font-medium tracking-[-0.015em] sm:text-lg">{item.title}</h3>
-                      <p className="text-sm leading-[1.85] text-black/60 dark:text-white/60">{item.body}</p>
-                    </div>
-                  ))}
-                </div>
+                <p className="text-[10px] uppercase tracking-[0.3em] text-brand">Selected work</p>
+                <h2 className="mt-4 text-[1.6rem] font-medium leading-[1.05] tracking-[-0.04em] sm:text-[2rem] lg:text-[2.4rem]">
+                  Products we&rsquo;ve
+                  <span className="font-display-serif font-light italic text-black/40 dark:text-white/40"> shaped.</span>
+                </h2>
               </div>
+              <Link
+                href="/work"
+                className="group inline-flex items-center gap-2 text-[10.5px] uppercase tracking-[0.2em] text-black/35 dark:text-white/35 transition-colors hover:text-black dark:hover:text-white"
+              >
+                All work
+                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </div>
 
+            {/* Featured case study — full width, editorial */}
+            <article className="group mb-5" data-aos="fade-up" data-aos-delay="40">
+              <Link href={`/work/${featuredStudies[0].slug}`} className="block overflow-hidden transition-all duration-300">
+                <div className="grid lg:grid-cols-[1.3fr_1fr]">
+                  <div className="relative aspect-[16/10] lg:aspect-[4/3] overflow-hidden bg-black/3 dark:bg-white/3">
+                    <Image
+                      src={featuredStudies[0].image}
+                      alt={featuredStudies[0].name}
+                      fill
+                      className="object-cover grayscale brightness-95 dark:brightness-[0.65] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-100 dark:group-hover:brightness-[0.85]"
+                    />
+                  </div>
+                  <div className="flex flex-col justify-between p-7 sm:p-9 lg:p-12 border border-t-0 lg:border-t lg:border-l-0 border-black/6 dark:border-white/6">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.25em] text-brand">{featuredStudies[0].category}</p>
+                      <h3 className="mt-5 text-[1.8rem] font-medium leading-[1] tracking-[-0.04em] sm:text-[2.4rem] lg:text-[2.8rem]">
+                        {featuredStudies[0].name}
+                      </h3>
+                      <p className="mt-5 text-[14px] leading-[1.9] text-black/60 dark:text-white/60 max-w-md">{featuredStudies[0].summary}</p>
+                    </div>
+                    <div className="mt-8 flex items-center justify-between gap-4 pt-6 border-t border-black/6 dark:border-white/6">
+                      <p className="font-display-serif italic text-[13px] text-black/45 dark:text-white/45">{featuredStudies[0].proof}</p>
+                      <span className="inline-flex shrink-0 items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-black dark:text-white transition-opacity group-hover:opacity-60">
+                        View
+                        <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </article>
+
+            {/* Secondary studies */}
+            <div className="grid gap-5 sm:grid-cols-2">
+              {featuredStudies.slice(1, 3).map((item, index) => (
+                <article key={item.slug} data-aos="fade-up" data-aos-delay={60 + index * 40}>
+                  <Link href={`/work/${item.slug}`} className="group/card block overflow-hidden border border-black/6 dark:border-white/6 transition-all duration-300 hover:border-black/12 dark:hover:border-white/12">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-black/3 dark:bg-white/3">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        className="object-cover grayscale brightness-95 dark:brightness-[0.65] transition-all duration-700 group-hover/card:grayscale-0 group-hover/card:brightness-100 dark:group-hover/card:brightness-[0.85]"
+                      />
+                    </div>
+                    <div className="p-6 sm:p-7">
+                      <p className="text-[10px] uppercase tracking-[0.25em] text-brand">{item.category}</p>
+                      <h3 className="mt-3 text-lg font-medium tracking-[-0.025em] sm:text-xl">{item.name}</h3>
+                      <p className="mt-3 text-[13px] leading-[1.85] text-black/60 dark:text-white/60 line-clamp-2">{item.summary}</p>
+                      <div className="mt-5 flex items-center justify-between gap-4 border-t border-black/6 dark:border-white/6 pt-5">
+                        <p className="font-display-serif italic text-[13px] text-black/40 dark:text-white/40">{item.proof}</p>
+                        <span className="inline-flex shrink-0 items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] text-black dark:text-white">
+                          View
+                          <ArrowRight className="h-3 w-3 transition-transform group-hover/card:translate-x-0.5" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </article>
+              ))}
+            </div>
+
+            {/* Explore all work — prominent CTA */}
+            <div className="mt-12 sm:mt-16 flex justify-center" data-aos="fade-up" data-aos-delay="100">
+              <Link
+                href="/work"
+                className="group/cta inline-flex items-center gap-3 border border-black/15 dark:border-white/15 px-8 py-4 text-[10.5px] uppercase tracking-[0.22em] text-black/60 dark:text-white/60 transition-all duration-300 hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black"
+              >
+                Explore all work
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/cta:translate-x-0.5" />
+              </Link>
             </div>
           </section>
 
-          {/* ─── Testimonials ───────────────────────────────────── */}
-          <section className="scroll-mt-20 border-t border-black/10 dark:border-white/10 py-20 sm:py-28 lg:py-36">
-            <div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
+          {/* ─── Pull-quote — full-width rhythm break ──────────── */}
+          <section className="py-16 sm:py-24 lg:py-32" data-aos="fade-up">
+            <div className="max-w-3xl">
+              <blockquote className="font-display-serif text-[1.5rem] leading-[1.45] font-light italic text-black/60 dark:text-white/55 sm:text-[2rem] lg:text-[2.4rem]">
+                &ldquo;They don&rsquo;t just code — they think like product owners and help shape the vision.&rdquo;
+              </blockquote>
+              <div className="mt-8 flex items-center gap-4">
+                <div className="h-px w-10 bg-brand/40" aria-hidden="true" />
+                <div>
+                  <p className="text-[12px] font-medium tracking-[-0.01em]">Sourabh Raj</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-black/40 dark:text-white/40 mt-0.5">CTO · Andrual AI</p>
+                </div>
+              </div>
+            </div>
+          </section>
 
-              <div className="lg:sticky lg:top-24 lg:self-start" data-aos="fade-up">
-                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">What they say</p>
+          {/* ─── Studio ─────────────────────────────────────────── */}
+          <section id="studio" className="scroll-mt-16 border-t border-black/6 dark:border-white/6 pt-20 pb-20 sm:pt-28 sm:pb-28 lg:pt-36 lg:pb-36">
+            <div data-aos="fade-up">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-brand mb-8 sm:mb-10">The studio</p>
+              <h2 className="max-w-3xl text-[1.8rem] font-medium leading-[1.1] tracking-[-0.04em] sm:text-[2.2rem] lg:text-[2.8rem]">
+                Taste, product judgment, and engineering discipline
+                <span className="font-display-serif font-light italic text-black/40 dark:text-white/40">
+                  {" "}— kept in one loop.
+                </span>
+              </h2>
+              <p className="mt-8 max-w-xl text-[15px] leading-[1.9] text-black/65 dark:text-white/65">
+                The value is not breadth on paper. It is the ability to decide well, design clearly, and execute under real pressure without losing the product.
+              </p>
+            </div>
+
+            {/* Principles — typographic, not tabular */}
+            <div className="mt-16 lg:mt-20 grid gap-0">
+              {[
+                { num: "01", title: "Senior judgment", body: "A smaller senior team for product decisions that cannot afford drift, dilution, or theatre." },
+                { num: "02", title: "Design under pressure", body: "Interfaces and systems shaped for real operators, real constraints, and real customer behavior." },
+                { num: "03", title: "Execution that holds", body: "Strategy, design, and engineering kept close enough that the right ideas survive implementation." },
+              ].map((item, index) => (
+                <div
+                  key={item.title}
+                  className="grid grid-cols-[3rem_1fr] gap-4 border-t border-black/6 dark:border-white/6 py-7 sm:grid-cols-[3rem_11rem_1fr] sm:items-baseline sm:gap-8 lg:py-9"
+                  data-aos="fade-up"
+                  data-aos-delay={40 + index * 30}
+                >
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-brand/60">{item.num}</span>
+                  <h3 className="text-[15px] font-medium tracking-[-0.01em]">{item.title}</h3>
+                  <p className="col-start-2 text-[13px] leading-[1.85] text-black/60 dark:text-white/60 sm:col-start-3">{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ─── Proof ──────────────────────────────────────────── */}
+          <section className="scroll-mt-16 pt-20 pb-20 sm:pt-28 sm:pb-28 lg:pt-32 lg:pb-32">
+            <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-20" data-aos="fade-up">
+              {/* Primary testimonial */}
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.3em] text-brand mb-8">What partners say</p>
+                <blockquote className="font-display-serif text-[1.25rem] leading-[1.55] font-light italic text-black/70 dark:text-white/65 sm:text-[1.45rem]">
+                  &ldquo;Vox Dei rebuilt our legacy platform with modern architecture and AI capabilities in record time. Their ability to navigate complex enterprise requirements while maintaining velocity is exceptional.&rdquo;
+                </blockquote>
+                <div className="mt-8 flex items-center gap-4">
+                  <div className="h-px w-8 bg-brand/30" aria-hidden="true" />
+                  <div>
+                    <a href="https://za.linkedin.com/in/dhiroshan-padayachee-21101723" target="_blank" rel="noreferrer" className="text-[12px] font-medium tracking-[-0.01em] hover:text-brand transition-colors">Dhiroshen Padayachee</a>
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-black/40 dark:text-white/40 mt-0.5">Development Manager · Discovery</p>
+                  </div>
+                </div>
               </div>
 
-              <div className="grid gap-px bg-black/10 dark:bg-white/10 sm:grid-cols-2">
+              {/* Secondary testimonials — stacked, compact */}
+              <div className="flex flex-col gap-10 lg:pt-16">
                 {[
                   {
-                    quote: "Vox Dei rebuilt our legacy platform with modern architecture and AI capabilities in record time. Their ability to navigate complex enterprise requirements while maintaining velocity is exceptional. They're true partners who understand both the technical and business challenges.",
-                    name: "Dhiroshen Padayachee",
-                    role: "Development Manager",
-                    company: "Discovery",
-                    linkedin: "https://za.linkedin.com/in/dhiroshan-padayachee-21101723",
-                  },
-                  {
-                    quote: "Working with Vox Dei on Andrual AI has been transformative. Their technical depth in AI and ability to ship production-grade features rapidly gave us the velocity we needed. They don't just code — they think like product owners and help shape the vision.",
-                    name: "Sourabh Raj",
-                    role: "CTO",
-                    company: "Andrual AI",
-                    linkedin: "https://de.linkedin.com/in/sraj1006",
-                  },
-                  {
-                    quote: "Vox Dei helped our organisation embrace AI in a practical, impactful way. They didn't just deliver technology — they empowered our team to leverage AI capabilities that make a real difference in our clients' lives. The transformation has been remarkable.",
+                    quote: "They empowered our team to leverage AI capabilities that make a real difference in our clients\u2019 lives.",
                     name: "Palesa Tlholoe",
-                    role: "Co Director",
-                    company: "IWS",
+                    role: "Co Director · IWS",
                     linkedin: "https://za.linkedin.com/in/palesa-tlholoe-cfp%C2%AE-99000b3b",
                   },
                   {
-                    quote: "Partnering with Vox Dei on our venture building initiatives opened our eyes to what's possible when you combine corporate resources with startup velocity. They helped us navigate the innovation process and build products that actually ship, not just PowerPoints.",
+                    quote: "They helped us navigate the innovation process and build products that actually ship, not just PowerPoints.",
                     name: "Mzwandile Mathebula",
-                    role: "Innovation Manager",
-                    company: "Old Mutual",
+                    role: "Innovation Manager · Old Mutual",
                     linkedin: "https://za.linkedin.com/in/mzwandile-m-69925064",
                   },
-                ].map((item, index) => (
-                  <article
-                    key={item.name}
-                    className="flex flex-col justify-between gap-10 bg-white dark:bg-black p-8 sm:p-10"
-                    data-aos="fade-up"
-                    data-aos-delay={60 + index * 50}
-                  >
-                    <blockquote className="text-sm leading-[1.95] text-black/65 dark:text-white/65">
+                ].map((item) => (
+                  <div key={item.name} className="border-t border-black/6 dark:border-white/6 pt-7">
+                    <blockquote className="text-[14px] leading-[1.9] text-black/60 dark:text-white/60 font-display-serif italic">
                       &ldquo;{item.quote}&rdquo;
                     </blockquote>
-                    <a
-                      href={item.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group flex items-center gap-3"
-                    >
-                      <div>
-                        <p className="text-[11px] font-medium tracking-[-0.01em] transition-colors group-hover:text-black/60 dark:group-hover:text-white/60">{item.name}</p>
-                        <p className="mt-0.5 text-[10px] uppercase tracking-[0.25em] text-black/40 dark:text-white/40">{item.role} · {item.company}</p>
-                      </div>
+                    <a href={item.linkedin} target="_blank" rel="noreferrer" className="mt-4 inline-block">
+                      <p className="text-[11px] font-medium tracking-[-0.01em] hover:text-brand transition-colors">{item.name}</p>
+                      <p className="text-[9.5px] uppercase tracking-[0.2em] text-black/40 dark:text-white/40 mt-0.5">{item.role}</p>
                     </a>
-                  </article>
+                  </div>
                 ))}
               </div>
-
-            </div>
-          </section>
-
-          {/* ─── Work ───────────────────────────────────────────── */}
-          <section id="work" className="scroll-mt-20 border-t border-black/10 dark:border-white/10 py-20 sm:py-28 lg:py-36">
-            <div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
-
-              <div className="lg:sticky lg:top-24 lg:self-start" data-aos="fade-up">
-                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Selected work</p>
-              </div>
-
-              <div>
-                <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between" data-aos="fade-up" data-aos-delay="60">
-                  <h2 className="max-w-2xl text-3xl font-medium leading-[1.12] tracking-[-0.04em] sm:text-4xl lg:text-[3rem]">
-                    Case studies, not name-dropping.
-                  </h2>
-                  <Link
-                    href="/work"
-                    className="group inline-flex shrink-0 items-center gap-2.5 text-[11px] uppercase tracking-[0.22em] text-black/45 dark:text-white/45 transition-colors hover:text-black dark:hover:text-white"
-                  >
-                    View all work
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </Link>
-                </div>
-
-                {/* Featured case study */}
-                <div className="mt-12" data-aos="fade-up" data-aos-delay="80">
-                  <GradientRule className="mb-4" />
-                  <article className="overflow-hidden border border-black/10 dark:border-white/10">
-
-                    {/* Full-width landscape image */}
-                    <div className="relative aspect-video overflow-hidden sm:aspect-21/9">
-                      <CaseStudyImage src={featuredStudy.image} alt={featuredStudy.name} />
-                      <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/15 to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-10">
-                        <p className="text-[10px] uppercase tracking-[0.3em] text-white/55">{featuredStudy.category}</p>
-                        <h3 className="mt-3 text-[2.2rem] font-medium leading-none tracking-[-0.04em] text-white sm:text-[3rem] lg:text-[3.75rem]">
-                          {featuredStudy.name}
-                        </h3>
-                      </div>
-                    </div>
-
-                    {/* Content below image */}
-                    <div className="grid border-t border-black/10 dark:border-white/10 lg:grid-cols-2">
-                      <div className="border-b border-black/10 dark:border-white/10 p-8 sm:p-10 lg:border-b-0 lg:border-r">
-                        <p className="text-[10px] uppercase tracking-[0.3em] text-black/45 dark:text-white/45">
-                          Challenge · Approach · Outcome
-                        </p>
-                        <p className="mt-7 text-[1.05rem] leading-[1.9] text-black/70 dark:text-white/70">{featuredStudy.summary}</p>
-                        <p className="mt-5 text-sm italic leading-[1.85] text-black/50 dark:text-white/50">{featuredStudy.proof}</p>
-                      </div>
-
-                      <div className="flex flex-col justify-between p-8 sm:p-10">
-                        <p className="text-sm leading-[1.85] text-black/60 dark:text-white/60">{featuredStudy.challenge}</p>
-                        <div className="mt-8 border-t border-black/10 dark:border-white/10 pt-8">
-                          <Link
-                            href={`/work/${featuredStudy.slug}`}
-                            className="group inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-opacity hover:opacity-50"
-                          >
-                            Read case study
-                            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-
-                  </article>
-                </div>
-
-                {/* Secondary case studies */}
-                <div className="mt-4 grid gap-4 lg:grid-cols-2">
-                  {secondaryStudies.slice(0, 2).map((item, index) => (
-                    <article
-                      key={item.slug}
-                      className="group overflow-hidden border border-black/10 dark:border-white/10 transition-all duration-300 hover:border-black/25 dark:hover:border-white/25"
-                      data-aos="fade-up"
-                      data-aos-delay={80 + index * 70}
-                    >
-                      <div className="relative aspect-16/10 overflow-hidden">
-                        <CaseStudyImage src={item.image} alt={item.name} />
-                        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/10 to-transparent" />
-                      </div>
-                      <div className="p-7 sm:p-8">
-                        <div className="flex flex-col gap-2">
-                          <p className="text-[10px] uppercase tracking-[0.25em] text-black/45 dark:text-white/45">{item.category}</p>
-                          <h3 className="text-xl font-medium tracking-[-0.03em] sm:text-2xl">{item.name}</h3>
-                        </div>
-                        <p className="mt-4 text-sm leading-[1.85] text-black/60 dark:text-white/60">{item.summary}</p>
-                        <div className="mt-7 flex items-center justify-between gap-4 border-t border-black/10 dark:border-white/10 pt-6">
-                          <p className="text-xs italic text-black/45 dark:text-white/45">{item.proof}</p>
-                          <Link
-                            href={`/work/${item.slug}`}
-                            className="group/link inline-flex shrink-0 items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-black dark:text-white transition-opacity hover:opacity-50"
-                          >
-                            Read
-                            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-0.5" />
-                          </Link>
-                        </div>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-
-              </div>
-            </div>
-          </section>
-
-          {/* ─── Partners ───────────────────────────────────────── */}
-          <section className="scroll-mt-20 border-t border-black/10 dark:border-white/10 py-20 sm:py-28 lg:py-36">
-            <div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
-
-              <div className="lg:sticky lg:top-24 lg:self-start" data-aos="fade-up">
-                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Strategic partners</p>
-              </div>
-
-              <div>
-                <div data-aos="fade-up" data-aos-delay="60">
-                  <p className="max-w-xl text-base leading-[1.9] text-black/65 dark:text-white/65">
-                    Collaborating with ecosystem leaders to support founders building things that matter.
-                  </p>
-                </div>
-
-                <div className="mt-12 grid gap-px bg-black/10 dark:bg-white/10 sm:grid-cols-2">
-                  {[
-                    {
-                      logo: "/logos/darkiesintech.svg",
-                      name: "Darkies in Tech",
-                      description: "A vetted community of POC founders, investors, and ecosystem builders operating within the South African tech ecosystem.",
-                      url: "https://www.darkiesintech.com/",
-                    },
-                    {
-                      logo: "/logos/thedelta.svg",
-                      name: "The Delta",
-                      description: "A venture platform building launchpads for generational companies and nurturing transformational enterprises.",
-                      url: "https://www.thedelta.co/",
-                    },
-                  ].map((partner, index) => (
-                    <a
-                      key={partner.name}
-                      href={partner.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group flex flex-col gap-8 bg-white dark:bg-black p-8 transition-colors hover:bg-black/3 dark:hover:bg-white/3 sm:p-10"
-                      data-aos="fade-up"
-                      data-aos-delay={60 + index * 60}
-                    >
-                      <div className="flex h-10 items-center">
-                        <Image
-                          src={partner.logo}
-                          alt={partner.name}
-                          width={120}
-                          height={40}
-                          className="max-h-8 w-auto object-contain brightness-0 dark:invert opacity-60 transition-opacity group-hover:opacity-100"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium tracking-[-0.01em]">{partner.name}</p>
-                        <p className="mt-2 text-sm leading-[1.85] text-black/55 dark:text-white/55">{partner.description}</p>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </div>
-
             </div>
           </section>
 
           {/* ─── Approach ───────────────────────────────────────── */}
-          <section id="approach" className="scroll-mt-20 border-t border-black/10 dark:border-white/10 py-20 sm:py-28 lg:py-36">
-            <div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
-
-              <div className="lg:sticky lg:top-24 lg:self-start" data-aos="fade-up">
-                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Why Vox Dei</p>
+          <section id="approach" className="scroll-mt-16 border-t border-black/6 dark:border-white/6 pt-20 pb-20 sm:pt-28 sm:pb-28 lg:pt-36 lg:pb-36">
+            <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20 lg:items-start">
+              <div data-aos="fade-up">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-brand mb-8">Working together</p>
+                <h2 className="text-[1.8rem] font-medium leading-[1.08] tracking-[-0.04em] sm:text-[2.2rem] lg:text-[2.8rem]">
+                  A smaller, senior team
+                  <span className="font-display-serif font-light italic text-black/40 dark:text-white/40">
+                    {" "}built for products that have to hold up.
+                  </span>
+                </h2>
               </div>
 
-              <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-start">
-
-                <div data-aos="fade-up" data-aos-delay="60">
-                  <GradientRule className="mb-10" />
-                  <blockquote className="text-[2.2rem] font-medium leading-[1.08] tracking-[-0.05em] sm:text-[2.8rem] lg:text-[3.4rem]">
-                    A smaller, senior team built to turn important bets into products that actually hold up.
-                  </blockquote>
-                </div>
-
-                <div data-aos="fade-up" data-aos-delay="100">
-                  {engagements.map((item) => (
-                    <article
-                      key={item.name}
-                      className="border-b border-black/10 dark:border-white/10 py-7 first:border-t first:border-black/10 dark:first:border-white/10"
-                    >
-                      <div className="flex items-baseline justify-between gap-4">
-                        <h3 className="text-base font-medium tracking-[-0.02em] sm:text-lg">{item.name}</h3>
-                        <span className="shrink-0 text-[10px] uppercase tracking-[0.25em] text-brand">{item.duration}</span>
-                      </div>
-                      <p className="mt-3 text-sm leading-[1.85] text-black/60 dark:text-white/60">{item.body}</p>
-                    </article>
-                  ))}
-                </div>
-
+              <div data-aos="fade-up" data-aos-delay="60">
+                {[
+                  { name: "Studio Sprint", duration: "4–8 weeks", body: "For repositioning, validation, focused product slices, and high-stakes resets." },
+                  { name: "Launch Partner", duration: "8–16 weeks", body: "For teams that need a senior partner driving quality and momentum through go-live." },
+                  { name: "Technical Partner", duration: "Ongoing", body: "For continued judgment across architecture, delivery pressure, and product evolution." },
+                ].map((item) => (
+                  <article
+                    key={item.name}
+                    className="border-t border-black/6 dark:border-white/6 py-7 first:border-t-0 first:pt-0 lg:first:border-t lg:first:pt-7"
+                  >
+                    <div className="flex items-baseline justify-between gap-4">
+                      <h3 className="text-[15px] font-medium tracking-[-0.015em]">{item.name}</h3>
+                      <span className="shrink-0 text-[10px] uppercase tracking-[0.2em] text-brand/70">{item.duration}</span>
+                    </div>
+                    <p className="mt-3 text-[13px] leading-[1.85] text-black/60 dark:text-white/60">{item.body}</p>
+                  </article>
+                ))}
               </div>
             </div>
           </section>
 
           {/* ─── Contact ────────────────────────────────────────── */}
-          <section id="contact" className="scroll-mt-20 border-t border-black/10 dark:border-white/10 py-20 sm:py-28 lg:py-36">
-            <div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
-
-              <div className="lg:sticky lg:top-24 lg:self-start" data-aos="fade-up">
-                <p className="text-[10px] uppercase tracking-[0.35em] text-brand">Start here</p>
+          <section id="contact" className="scroll-mt-16 border-t border-black/6 dark:border-white/6 pt-20 pb-20 sm:pt-28 sm:pb-28 lg:pt-36 lg:pb-36">
+            <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20 lg:items-start">
+              <div data-aos="fade-up">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-brand mb-6">Start here</p>
+                <h2 className="text-[2rem] font-medium leading-[0.95] tracking-[-0.045em] sm:text-[2.8rem] lg:text-[3.4rem]">
+                  Bring the product
+                  <span className="block font-display-serif font-light italic text-black/35 dark:text-white/35 mt-1">
+                    that actually matters.
+                  </span>
+                </h2>
+                <div className="mt-8 h-px w-16 bg-brand/30" aria-hidden="true" />
+                <p className="mt-7 max-w-xs text-[13px] leading-[1.9] text-black/60 dark:text-white/60">
+                  Use the form to open a conversation. We respond within a few days if there is a fit.
+                </p>
+                <a
+                  href="https://www.voxdei.io/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group mt-7 inline-flex items-center gap-2 text-[10.5px] uppercase tracking-[0.2em] text-black/35 dark:text-white/35 transition-colors hover:text-black dark:hover:text-white"
+                >
+                  Read our journal
+                  <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+                </a>
               </div>
 
-              <div className="grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:items-start">
-
-                <div data-aos="fade-up" data-aos-delay="60">
-                  <h2 className="text-[3rem] font-medium leading-[0.92] tracking-[-0.055em] sm:text-[4rem] lg:text-[5rem]">
-                    Bring the product
-                    <span className="mt-1 block font-serif font-normal italic text-black/50 dark:text-white/50">
-                      that actually matters.
-                    </span>
-                  </h2>
-                  <GradientRule className="my-8" />
-                  <p className="max-w-xs text-sm leading-[1.9] text-black/60 dark:text-white/60 sm:text-base">
-                    Use the form to open a ready-to-send inquiry with your details already structured.
-                  </p>
-                  <a
-                    href="https://www.voxdei.io/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group mt-7 inline-flex items-center gap-2.5 text-[11px] uppercase tracking-[0.22em] text-black/45 dark:text-white/45 transition-colors hover:text-black dark:hover:text-white"
-                  >
-                    Read our thoughts
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </a>
-                </div>
-
-                <div data-aos="fade-up" data-aos-delay="100">
-                  <ContactForm />
-                </div>
-
+              <div data-aos="fade-up" data-aos-delay="60">
+                <ContactForm />
               </div>
             </div>
           </section>
 
           {/* ─── Footer ─────────────────────────────────────────── */}
-          <footer className="border-t border-black/10 dark:border-white/10 py-10">
-            <GradientRule className="mb-10" />
-            <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
-              <div className="flex flex-col gap-3">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-black/40 dark:text-white/40">© {new Date().getFullYear()} Vox Dei Studio</p>
-                <p className="text-[10px] uppercase tracking-[0.25em] text-black/25 dark:text-white/25">Africa · Europe</p>
+          <footer className="border-t border-black/6 dark:border-white/6 py-10 lg:py-12" role="contentinfo">
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center gap-6">
+                <p className="text-[10px] uppercase tracking-[0.25em] text-black/40 dark:text-white/40">© {new Date().getFullYear()} Vox Dei Studio</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-black/30 dark:text-white/30">Africa · Europe</p>
               </div>
-              <nav className="flex flex-wrap gap-6 text-[10px] uppercase tracking-[0.25em] text-black/35 dark:text-white/35">
-                <a href="#studio" className="transition-colors hover:text-black/70 dark:hover:text-white/70">Studio</a>
-                <Link href="/work" className="transition-colors hover:text-black/70 dark:hover:text-white/70">Work</Link>
-                <a href="#approach" className="transition-colors hover:text-black/70 dark:hover:text-white/70">Approach</a>
-                <a href="https://www.voxdei.io/" target="_blank" rel="noreferrer" className="transition-colors hover:text-black/70 dark:hover:text-white/70">Thoughts</a>
-                <a href="#contact" className="transition-colors hover:text-black/70 dark:hover:text-white/70">Contact</a>
+              <nav aria-label="Footer navigation" className="flex flex-wrap gap-6 text-[10px] uppercase tracking-[0.2em] text-black/40 dark:text-white/40">
+                <a href="#work" className="transition-colors hover:text-black/50 dark:hover:text-white/50">Work</a>
+                <a href="#studio" className="transition-colors hover:text-black/50 dark:hover:text-white/50">Studio</a>
+                <a href="#approach" className="transition-colors hover:text-black/50 dark:hover:text-white/50">Approach</a>
+                <a href="https://www.voxdei.io/" target="_blank" rel="noreferrer" className="transition-colors hover:text-black/50 dark:hover:text-white/50">Journal</a>
+                <a href="#contact" className="transition-colors hover:text-black/50 dark:hover:text-white/50">Contact</a>
               </nav>
               <a
                 href="https://www.linkedin.com/in/tsepo-ntsaba-50a691133/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-[10px] uppercase tracking-[0.25em] text-black/30 dark:text-white/30 transition-colors hover:text-black/70 dark:hover:text-white/70"
+                className="text-[10px] uppercase tracking-[0.2em] text-black/35 dark:text-white/35 transition-colors hover:text-black/60 dark:hover:text-white/60"
                 aria-label="LinkedIn"
               >
                 LinkedIn
