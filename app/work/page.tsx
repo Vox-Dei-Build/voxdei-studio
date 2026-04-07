@@ -3,8 +3,9 @@ import Link from "next/link"
 import { ArrowRight, ExternalLink } from "lucide-react"
 import { portfolioItems } from "@/lib/portfolio"
 import { SiteFooter } from "@/components/site-footer"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { SiteHeader } from "@/components/site-header"
 import type { Metadata } from "next"
+import type { PortfolioItem } from "@/lib/portfolio"
 
 export const metadata: Metadata = {
   title: "Work",
@@ -12,18 +13,181 @@ export const metadata: Metadata = {
     "A full view of the products, platforms, and ventures Vox Dei Studio has shaped — across South Africa, Europe, and beyond.",
 }
 
-function GradientRule({ className = "" }: { className?: string }) {
+/* ── Shared image treatment ─────────────────────────────────────── */
+const imgGrayscale =
+  "object-cover grayscale brightness-95 dark:brightness-[0.65] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-100 dark:group-hover:brightness-[0.85]"
+
+/* ── Index label ────────────────────────────────────────────────── */
+function Idx({ n }: { n: number }) {
   return (
-    <div
-      aria-hidden="true"
-      className={`h-px w-full bg-linear-to-r from-transparent via-brand/30 to-transparent ${className}`}
-    />
+    <span className="text-[10px] uppercase tracking-[0.3em] text-brand/50">
+      {String(n).padStart(2, "0")}
+    </span>
   )
 }
 
-export default function WorkPage() {
+/* ── Card variants ──────────────────────────────────────────────── */
+
+function FeaturedCard({
+  item,
+  index,
+  reverse = false,
+}: {
+  item: PortfolioItem
+  index: number
+  reverse?: boolean
+}) {
+  const href = item.slug ? `/work/${item.slug}` : (item.liveUrl ?? "#")
+
   return (
-    <main className="relative min-h-screen overflow-hidden bg-white dark:bg-black text-black dark:text-white">
+    <div className="group relative overflow-hidden border border-black/6 dark:border-white/6 transition-all duration-300 hover:border-black/12 dark:hover:border-white/12">
+      {/* Full-card link overlay */}
+      <Link href={href} className="absolute inset-0 z-10" aria-label={`View ${item.name}`} />
+
+      <div className="grid lg:grid-cols-[1.3fr_1fr]">
+        <div
+          className={`relative aspect-video lg:aspect-auto lg:min-h-[28rem] overflow-hidden ${reverse ? "lg:order-2" : ""}`}
+        >
+          <Image
+            src={item.image}
+            alt={item.name}
+            fill
+            className={imgGrayscale}
+            priority={index === 0}
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent lg:hidden" />
+        </div>
+        <div
+          className={`flex flex-col justify-between p-7 sm:p-9 lg:p-14 ${reverse ? "lg:order-1 lg:text-right" : ""}`}
+        >
+          <div>
+            <div className={`flex items-center gap-4 ${reverse ? "lg:flex-row-reverse" : ""}`}>
+              <Idx n={index + 1} />
+              <p className="text-[10px] uppercase tracking-[0.25em] text-brand">
+                {item.category}
+              </p>
+            </div>
+            <h2 className="mt-6 text-[1.8rem] font-medium leading-[0.95] tracking-[-0.04em] sm:text-[2.4rem] lg:text-[2.8rem]">
+              {item.name}
+            </h2>
+            <p className="mt-6 text-[14px] leading-[1.9] text-black/60 dark:text-white/60 max-w-md">
+              {item.summary}
+            </p>
+          </div>
+          <div
+            className={`mt-10 flex items-center gap-6 pt-6 border-t border-black/6 dark:border-white/6 ${reverse ? "lg:flex-row-reverse" : ""}`}
+          >
+            <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-black/50 dark:text-white/50 transition-colors group-hover:text-black dark:group-hover:text-white">
+              {item.slug ? "Read case study" : "View project"}
+              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+            </span>
+            {item.liveUrl && item.slug && (
+              <a
+                href={item.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="relative z-20 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-black/35 dark:text-white/35 transition-colors hover:text-black/60 dark:hover:text-white/60"
+              >
+                Live
+                <ExternalLink className="h-2.5 w-2.5" />
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function MediumCard({ item, index }: { item: PortfolioItem; index: number }) {
+  const href = item.slug ? `/work/${item.slug}` : (item.liveUrl ?? "#")
+
+  return (
+    <div className="group relative overflow-hidden border border-black/6 dark:border-white/6 transition-all duration-300 hover:border-black/12 dark:hover:border-white/12">
+      <Link href={href} className="absolute inset-0 z-10" aria-label={`View ${item.name}`} />
+
+      <div className="relative aspect-video overflow-hidden">
+        <Image src={item.image} alt={item.name} fill className={imgGrayscale} />
+        <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
+      </div>
+      <div className="p-6 sm:p-7">
+        <div className="flex items-center gap-3">
+          <Idx n={index + 1} />
+          <p className="text-[10px] uppercase tracking-[0.25em] text-brand">
+            {item.category}
+          </p>
+        </div>
+        <h2 className="mt-3 text-lg font-medium tracking-[-0.025em] sm:text-xl">
+          {item.name}
+        </h2>
+        <p className="mt-3 text-[13px] leading-[1.85] text-black/60 dark:text-white/60 line-clamp-2">
+          {item.summary}
+        </p>
+        <div className="mt-5 flex items-center justify-between gap-4 border-t border-black/6 dark:border-white/6 pt-5">
+          <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] text-black/45 dark:text-white/45 transition-colors group-hover:text-black dark:group-hover:text-white">
+            {item.slug ? "Case study" : "View"}
+            <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+          </span>
+          {item.liveUrl && (
+            <a
+              href={item.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="relative z-20 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-black/30 dark:text-white/30 transition-colors hover:text-black/60 dark:hover:text-white/60"
+            >
+              Live
+              <ExternalLink className="h-2.5 w-2.5" />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function CompactCard({ item, index }: { item: PortfolioItem; index: number }) {
+  const href = item.slug ? `/work/${item.slug}` : (item.liveUrl ?? "#")
+
+  return (
+    <div className="group relative overflow-hidden border border-black/6 dark:border-white/6 transition-all duration-300 hover:border-black/12 dark:hover:border-white/12">
+      <Link href={href} className="absolute inset-0 z-10" aria-label={`View ${item.name}`} />
+
+      <div className="relative aspect-video overflow-hidden">
+        <Image src={item.image} alt={item.name} fill className={imgGrayscale} />
+      </div>
+      <div className="p-5 sm:p-6">
+        <div className="flex items-center gap-3">
+          <Idx n={index + 1} />
+          <p className="text-[10px] uppercase tracking-[0.25em] text-brand">
+            {item.category}
+          </p>
+        </div>
+        <h2 className="mt-2.5 text-[15px] font-medium tracking-[-0.02em] sm:text-base">
+          {item.name}
+        </h2>
+        <p className="mt-2 text-[12px] leading-[1.8] text-black/55 dark:text-white/55 line-clamp-2">
+          {item.summary}
+        </p>
+      </div>
+    </div>
+  )
+}
+
+/* ── Page ────────────────────────────────────────────────────────── */
+
+export default function WorkPage() {
+  /* Group items into editorial rhythm */
+  const hero1 = portfolioItems[0]
+  const pairA = portfolioItems.slice(1, 3)
+  const tripleA = portfolioItems.slice(3, 6)
+  const pairB = portfolioItems.slice(6, 8)
+  const hero2 = portfolioItems[8]
+  const tripleB = portfolioItems.slice(9, 12)
+  const tripleC = portfolioItems.slice(12, 15)
+  const tripleD = portfolioItems.slice(15, 18)
+
+  return (
+    <main className="relative min-h-screen overflow-hidden bg-stone-50 dark:bg-neutral-950 text-black dark:text-white">
 
       {/* Page-level radial glow */}
       <div
@@ -31,144 +195,119 @@ export default function WorkPage() {
         className="pointer-events-none absolute inset-x-0 top-0 h-220 bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(181,96,58,0.06),transparent)] dark:bg-[radial-gradient(ellipse_75%_45%_at_50%_-15%,rgba(212,128,90,0.07),transparent)]"
       />
 
-      <div className="relative mx-auto max-w-336 px-6 sm:px-10 lg:px-16">
+      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
 
         {/* ─── Header ─────────────────────────────────────────── */}
-        <header className="sticky top-0 z-40 bg-white/96 dark:bg-black/96 backdrop-blur-sm">
-          <div className="flex items-center justify-between border-b border-black/10 dark:border-white/10 py-5">
-
-            <Link href="/" className="flex items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-black dark:text-white">
-              <span className="inline-flex h-8 w-8 items-center justify-center border border-black/30 dark:border-white/30 text-[10px] font-medium tracking-[0.32em]">
-                VD
-              </span>
-              Vox Dei Studio
-            </Link>
-
-            <nav className="hidden items-center gap-8 text-[11px] uppercase tracking-[0.2em] text-black/50 dark:text-white/50 md:flex">
-              <Link href="/#studio" className="transition-colors hover:text-black dark:hover:text-white">Studio</Link>
-              <Link href="/work" className="text-black dark:text-white">Work</Link>
-              <Link href="/#approach" className="transition-colors hover:text-black dark:hover:text-white">Approach</Link>
-              <a href="https://www.voxdei.io/" target="_blank" rel="noreferrer" className="transition-colors hover:text-black dark:hover:text-white">Thoughts</a>
-              <Link href="/#contact" className="transition-colors hover:text-black dark:hover:text-white">Contact</Link>
-            </nav>
-
-            <div className="flex items-center gap-4">
-              <ThemeToggle />
-              <Link
-                href="/#contact"
-                className="hidden border border-black/25 dark:border-white/25 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-black/80 dark:text-white/80 transition-all hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black md:inline-flex"
-              >
-                Start here
-              </Link>
-            </div>
-
-          </div>
-        </header>
+        <SiteHeader />
 
         {/* ─── Hero ───────────────────────────────────────────── */}
-        <section className="pb-16 pt-20 sm:pb-20 sm:pt-28">
+        <section className="pb-16 pt-20 sm:pb-20 sm:pt-28 lg:pt-36">
           <div data-aos="fade-up">
-            <p className="text-[11px] uppercase tracking-[0.35em] text-brand">
+            <p className="text-[10px] uppercase tracking-[0.3em] text-brand">
               Selected work
             </p>
             <h1 className="mt-7 text-[3.5rem] font-medium leading-[0.88] tracking-[-0.055em] sm:text-[5.5rem] lg:text-[7rem]">
               Products shaped
-              <span className="mt-1 block font-serif font-normal italic tracking-[-0.02em] text-black/55 dark:text-white/55">
+              <span className="mt-1 block font-display-serif font-light italic tracking-[-0.02em] text-black/40 dark:text-white/40">
                 with purpose.
               </span>
             </h1>
-            <GradientRule className="mt-10 max-w-sm" />
-            <p className="mt-8 max-w-xl text-base leading-[1.9] text-black/65 dark:text-white/65">
-A selection of the work we're proud to talk about — across enterprise platforms, AI workspaces, mobile commerce, healthcare, hospitality, and brand. South Africa, Europe, and beyond.
+            <div className="mt-10 h-px w-full max-w-sm bg-linear-to-r from-transparent via-brand/30 to-transparent" aria-hidden="true" />
+            <p className="mt-8 max-w-xl text-[15px] leading-[1.9] text-black/65 dark:text-white/65">
+              A selection of the work we&rsquo;re proud to talk about — across enterprise platforms, AI workspaces, mobile commerce, healthcare, hospitality, and brand. South Africa, Europe, and beyond.
             </p>
           </div>
         </section>
 
-        {/* ─── Grid ───────────────────────────────────────────── */}
-        <section className="border-t border-black/10 dark:border-white/10 pb-28 pt-16">
-          <div className="grid gap-px bg-black/10 dark:bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
-            {portfolioItems.map((item, index) => (
-              <div key={index} className="group relative flex flex-col bg-white dark:bg-black transition-all duration-300 hover:bg-black/3 dark:hover:bg-white/3">
+        {/* ─── Editorial grid ─────────────────────────────────── */}
+        <section className="border-t border-black/6 dark:border-white/6 pb-20 pt-16 sm:pb-28 sm:pt-20 lg:pt-24">
 
-                {/* Full-card link overlay for case studies (sits below interactive elements) */}
-                {item.slug && (
-                  <Link href={`/work/${item.slug}`} className="absolute inset-0 z-10" aria-label={`Read ${item.name} case study`} />
-                )}
+          {/* 01 — Featured hero */}
+          <div data-aos="fade-up">
+            <FeaturedCard item={hero1} index={0} />
+          </div>
 
-                {/* Screenshot */}
-                <div className="relative aspect-video overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="object-cover grayscale brightness-70 transition-all duration-500 group-hover:brightness-90"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
-
-                  {/* Logo badge */}
-                  {item.logo && (
-                    <div className="absolute left-5 top-5 flex h-10 w-10 items-center justify-center border border-white/15 bg-black/60 p-2 backdrop-blur-sm">
-                      <Image
-                        src={item.logo}
-                        alt={item.name}
-                        width={32}
-                        height={32}
-                        className="max-h-6 w-auto object-contain brightness-0 invert"
-                      />
-                    </div>
-                  )}
-
-                </div>
-
-                {/* Info */}
-                <div className="flex flex-1 flex-col justify-between gap-5 p-6">
-                  <div>
-                    <p className="text-[10px] uppercase tracking-[0.3em] text-brand/70">{item.category}</p>
-                    <h2 className="mt-2 text-base font-medium tracking-[-0.02em] sm:text-lg">{item.name}</h2>
-                    <p className="mt-3 text-sm leading-[1.75] text-black/50 dark:text-white/50">{item.summary}</p>
-                  </div>
-                  <div className="flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-black/35 dark:text-white/35 transition-colors duration-300 group-hover:text-black/60 dark:group-hover:text-white/60">
-                      Read case study
-                      <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
-                    </div>
-                    {item.liveUrl && (
-                      <a
-                        href={item.liveUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="relative z-20 flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-black/35 dark:text-white/35 transition-colors hover:text-black/70 dark:hover:text-white/70"
-                      >
-                        View live
-                        <ExternalLink className="h-3 w-3" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
+          {/* 02–03 — Equal pair */}
+          <div className="mt-5 grid gap-5 sm:grid-cols-2" data-aos="fade-up">
+            {pairA.map((item, i) => (
+              <MediumCard key={item.name} item={item} index={i + 1} />
             ))}
           </div>
+
+          {/* 04–06 — Triple */}
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-aos="fade-up">
+            {tripleA.map((item, i) => (
+              <MediumCard key={item.name} item={item} index={i + 3} />
+            ))}
+          </div>
+
+          {/* ── Editorial interlude ──────────────────────────── */}
+          <div className="py-16 sm:py-20 lg:py-24" data-aos="fade-up">
+            <div className="flex items-center gap-6">
+              <div className="h-px flex-1 bg-linear-to-r from-transparent via-brand/20 to-transparent" aria-hidden="true" />
+            </div>
+            <p className="mt-8 text-center font-display-serif text-[1.1rem] italic leading-[1.6] text-black/35 dark:text-white/35 sm:text-[1.3rem]">
+              Selected work — across Africa, Europe &amp; beyond.
+            </p>
+            <div className="mt-8 flex items-center gap-6">
+              <div className="h-px flex-1 bg-linear-to-r from-transparent via-brand/20 to-transparent" aria-hidden="true" />
+            </div>
+          </div>
+
+          {/* 07–08 — Equal pair */}
+          <div className="grid gap-5 sm:grid-cols-2" data-aos="fade-up">
+            {pairB.map((item, i) => (
+              <MediumCard key={item.name} item={item} index={i + 6} />
+            ))}
+          </div>
+
+          {/* 09 — Featured hero (reversed) */}
+          <div className="mt-5" data-aos="fade-up">
+            <FeaturedCard item={hero2} index={8} reverse />
+          </div>
+
+          {/* 10–12 — Triple compact */}
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-aos="fade-up">
+            {tripleB.map((item, i) => (
+              <CompactCard key={item.name} item={item} index={i + 9} />
+            ))}
+          </div>
+
+          {/* 13–15 — Triple medium */}
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-aos="fade-up">
+            {tripleC.map((item, i) => (
+              <MediumCard key={item.name} item={item} index={i + 12} />
+            ))}
+          </div>
+
+          {/* 16–18 — Triple compact */}
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-aos="fade-up">
+            {tripleD.map((item, i) => (
+              <CompactCard key={item.name} item={item} index={i + 15} />
+            ))}
+          </div>
+
         </section>
 
         {/* ─── CTA ────────────────────────────────────────────── */}
-        <section className="border-t border-black/10 dark:border-white/10 py-20 sm:py-28" data-aos="fade-up">
+        <section className="border-t border-black/6 dark:border-white/6 py-20 sm:py-28" data-aos="fade-up">
           <div className="grid gap-10 sm:grid-cols-2 sm:items-end">
             <div>
               <h2 className="text-[2.5rem] font-medium leading-[0.92] tracking-[-0.055em] sm:text-[3.5rem]">
                 Bring the product
-                <span className="mt-1 block font-serif font-normal italic text-black/50 dark:text-white/50">
+                <span className="mt-1 block font-display-serif font-light italic text-black/35 dark:text-white/35">
                   that actually matters.
                 </span>
               </h2>
             </div>
             <div className="flex flex-col gap-4 sm:items-end">
-              <GradientRule className="hidden sm:block" />
-              <p className="text-sm leading-[1.85] text-black/55 dark:text-white/55 sm:text-right">
+              <div className="hidden h-px w-full bg-linear-to-r from-transparent via-brand/30 to-transparent sm:block" aria-hidden="true" />
+              <p className="text-sm leading-[1.85] text-black/65 dark:text-white/65 sm:text-right">
                 We work with a small number of clients at any given time. Tell us what you are building.
               </p>
               <Link
                 href="/#contact"
-                className="inline-flex w-full items-center justify-between gap-2.5 border border-black/25 dark:border-white/25 px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-all hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black sm:w-auto sm:justify-start sm:py-3"
+                className="inline-flex w-full items-center justify-between gap-2.5 border border-black/15 dark:border-white/15 px-6 py-4 text-[11px] uppercase tracking-[0.22em] text-black dark:text-white transition-all hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black sm:w-auto sm:justify-start sm:py-3"
               >
                 Start a conversation
                 <ArrowRight className="h-3.5 w-3.5" />
