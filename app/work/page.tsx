@@ -10,7 +10,7 @@ import type { PortfolioItem } from "@/lib/portfolio"
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "A full view of the products, platforms, and ventures Vox Dei Studio has shaped — across South Africa, Europe, and beyond.",
+    "A full view of the strategy, AI orchestration, product, and engineering work Vox Dei Studio has delivered — across South Africa, Europe, and beyond.",
 }
 
 /* ── Shared image treatment ─────────────────────────────────────── */
@@ -214,7 +214,7 @@ export default function WorkPage() {
             </h1>
             <div className="mt-10 h-px w-full max-w-sm bg-linear-to-r from-transparent via-brand/30 to-transparent" aria-hidden="true" />
             <p className="mt-8 max-w-xl text-[15px] leading-[1.9] text-black/65 dark:text-white/65">
-              A selection of the work we&rsquo;re proud to talk about — across enterprise platforms, AI workspaces, mobile commerce, healthcare, hospitality, and brand. South Africa, Europe, and beyond.
+              A selection of the work we&rsquo;re proud to talk about — across enterprise platforms, strategy-led product work, AI workspaces, mobile commerce, healthcare, hospitality, and brand. South Africa, Europe, and beyond.
             </p>
           </div>
         </section>

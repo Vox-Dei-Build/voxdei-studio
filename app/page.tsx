@@ -46,7 +46,7 @@ export default function Home() {
             {/* Supporting — left-aligned, single column */}
             <div className="max-w-lg pb-16 sm:pb-20 lg:pb-28" data-aos="fade-up" data-aos-delay="60">
               <p className="text-[15px] leading-[1.9] text-black/65 dark:text-white/65">
-                Product, design, and engineering — one senior team. For founders
+                Strategy, product, design, and engineering — one senior team. For founders
                 and operators building things that have to hold.
               </p>
               <a
@@ -202,7 +202,7 @@ export default function Home() {
                 </span>
               </h2>
               <p className="mt-8 max-w-xl text-[15px] leading-[1.9] text-black/65 dark:text-white/65">
-                The value is not breadth on paper. It is the ability to decide well, design clearly, and execute under real pressure without losing the product.
+                The value is not breadth on paper. It is the ability to diagnose well, decide well, design clearly, and execute under real pressure without losing the product.
               </p>
             </div>
 
@@ -210,8 +210,8 @@ export default function Home() {
             <div className="mt-16 lg:mt-20 grid gap-0">
               {[
                 { num: "01", title: "Senior judgment", body: "A smaller senior team for product decisions that cannot afford drift, dilution, or theatre." },
-                { num: "02", title: "Design under pressure", body: "Interfaces and systems shaped for real operators, real constraints, and real customer behavior." },
-                { num: "03", title: "Execution that holds", body: "Strategy, design, and engineering kept close enough that the right ideas survive implementation." },
+                { num: "02", title: "Strategy in the loop", body: "Positioning, customer friction, and operating reality kept close enough to shape what gets built." },
+                { num: "03", title: "Execution that holds", body: "Strategy, AI orchestration, design, and engineering kept close enough that the right ideas survive implementation." },
               ].map((item, index) => (
                 <div
                   key={item.title}
@@ -290,9 +290,9 @@ export default function Home() {
 
               <div data-aos="fade-up" data-aos-delay="60">
                 {[
-                  { name: "Studio Sprint", duration: "4–8 weeks", body: "For repositioning, validation, focused product slices, and high-stakes resets." },
-                  { name: "Launch Partner", duration: "8–16 weeks", body: "For teams that need a senior partner driving quality and momentum through go-live." },
-                  { name: "Technical Partner", duration: "Ongoing", body: "For continued judgment across architecture, delivery pressure, and product evolution." },
+                  { name: "Studio Sprint", duration: "4–8 weeks", body: "For repositioning, validation, focused product slices, strategy work, and high-stakes resets." },
+                  { name: "Launch Partner", duration: "8–16 weeks", body: "For teams that need a senior partner driving quality, clarity, and momentum through go-live." },
+                  { name: "Technical Partner", duration: "Ongoing", body: "For continued judgment across architecture, AI orchestration, delivery pressure, and product evolution." },
                 ].map((item) => (
                   <article
                     key={item.name}
@@ -315,14 +315,14 @@ export default function Home() {
               <div data-aos="fade-up">
                 <p className="text-[10px] uppercase tracking-[0.3em] text-brand mb-6">Start here</p>
                 <h2 className="text-[2rem] font-medium leading-[0.95] tracking-[-0.045em] sm:text-[2.8rem] lg:text-[3.4rem]">
-                  Bring the product
+                  Bring the product,
                   <span className="block font-display-serif font-light italic text-black/35 dark:text-white/35 mt-1">
-                    that actually matters.
+                    strategy, or operating problem that actually matters.
                   </span>
                 </h2>
                 <div className="mt-8 h-px w-16 bg-brand/30" aria-hidden="true" />
                 <p className="mt-7 max-w-xs text-[13px] leading-[1.9] text-black/60 dark:text-white/60">
-                  Use the form to open a conversation. We respond within a few days if there is a fit.
+                  Use the form to open a conversation. Bring a product, a strategy question, or an AI orchestration problem. We respond within a few days if there is a fit.
                 </p>
                 <a
                   href="https://www.voxdei.io/"

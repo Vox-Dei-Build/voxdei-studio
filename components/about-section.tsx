@@ -14,7 +14,7 @@ const principles = [
   {
     title: "Product Ownership",
     description:
-      "We think like builders, not contractors. From system architecture to deployment — we own the technical outcome.",
+      "We think like builders, not contractors. From diagnosis and system architecture to delivery — we own the outcome, not only the implementation.",
   },
   {
     title: "Real-World Impact",
@@ -39,12 +39,12 @@ export function AboutSection() {
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 We operate as a venture studio and technical partner for enterprises, startups, and brands. Our work
-                spans AI-enabled products, enterprise banking systems, healthcare platforms, and premium digital
+                spans strategy, AI-enabled products, enterprise banking systems, healthcare platforms, and premium digital
                 experiences.
               </p>
               <p>
-                From leading frontend architecture at FNB's national banking platform to building AI-powered WhatsApp
-                commerce systems — we combine technical execution with product thinking. We've shipped production
+                From leading frontend architecture at FNB's national banking platform to shaping AI-powered WhatsApp
+                commerce systems and agent workflows — we combine strategy, technical execution, and product thinking. We've shipped production
                 systems used by thousands of users daily.
               </p>
               <p>
