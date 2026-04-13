@@ -19,14 +19,14 @@ export const caseStudies: CaseStudy[] = [
     name: "FNB Home Loans",
     category: "Enterprise platform · South Africa",
     summary:
-      "Frontend architecture and design-system quality inside a national-scale enterprise context where consistency and reliability matter.",
-    proof: "Enterprise discipline, not only startup pace.",
+      "Product clarity, design-system quality, and frontend discipline inside a national-scale banking context — where judgment matters as much as execution, and consistency is a strategic advantage.",
+    proof: "Enterprise discipline with relevance for retail banking strategy.",
     image: "/screenshots/fnb.png",
     logo: "/logos/fnb.png",
     challenge:
-      "Large-scale platform work demanded frontend discipline, clear systems thinking, and consistent quality inside enterprise complexity.",
+      "Inside a national-scale banking platform, the challenge was not only delivery quality — it was keeping product clarity and systems thinking intact inside enterprise complexity, where drift and dilution are the default.",
     work: [
-      "Contributed to modern frontend architecture and design-system quality.",
+      "Contributed to modern frontend architecture and design-system quality while maintaining product clarity across delivery constraints.",
       "Helped keep implementation standards reliable across complex delivery constraints.",
       "Focused on product quality where consistency and resilience mattered more than novelty.",
     ],
@@ -89,23 +89,23 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "pasella",
     name: "Pasella",
-    category: "WhatsApp systems · South Africa",
+    category: "Commerce strategy · South Africa",
     summary:
-      "Mobile-first conversational journeys across selling, onboarding, and payment-oriented flows shaped for real customer behaviour.",
-    proof: "Practical execution for emerging-market operating conditions.",
+      "Mobile-first conversational journeys across selling, onboarding, and payment-oriented flows — with lessons in trust, simplicity, and customer behaviour that extend beyond the product itself.",
+    proof: "Practical execution and strategy insight for emerging-market operating conditions.",
     image: "/screenshots/pasella.png",
     logo: "/logos/pasella.png",
     challenge:
-      "Customer journeys had to work inside the realities of mobile-first behaviour, messaging flows, and operational follow-through.",
+      "Understanding how to drive trust, onboarding, and conversion inside mobile-first, messaging-native environments demanded genuine customer insight — not just WhatsApp-native execution. The real work was diagnosing behaviour, not just implementing flows.",
     work: [
       "Shaped conversational selling and onboarding flows where the customer already is.",
       "Worked around WhatsApp-native constraints instead of pretending customers behave like desktop users.",
-      "Balanced product clarity, commercial movement, and operational practicality.",
+      "Used the product as a live learning engine for customer friction, retail behaviour, and low-friction journey design.",
     ],
     outcome: [
       "A stronger mobile-first commerce and onboarding posture.",
       "Proof of execution in environments where simplicity and usefulness matter more than polish theatre.",
-      "A clearer example of Vox Dei working close to real-world adoption constraints.",
+      "A clearer example of Vox Dei translating product work into strategic insight for retail and service businesses.",
     ],
     liveUrl: "https://pasella.co/",
     liveLabel: "View Pasella",
@@ -116,7 +116,7 @@ export const caseStudies: CaseStudy[] = [
     category: "AI workspace · Europe",
     summary:
       "Product direction, UX refinement, and delivery quality across an AI-native real-estate operating layer under live commercial pressure.",
-    proof: "Judgment under ambiguity, not just feature throughput.",
+    proof: "Judgment under ambiguity, plus practical AI orchestration thinking.",
     image: "/screenshots/andrual.png",
     logo: "/logos/andrual.png",
     challenge:
@@ -124,12 +124,12 @@ export const caseStudies: CaseStudy[] = [
     work: [
       "Reframed key surfaces around operational clarity instead of feature sprawl.",
       "Tightened UX quality across product flows where execution confidence mattered.",
-      "Worked closer to real delivery pressure so design, implementation, and QA stayed connected.",
+      "Kept design, implementation, QA, and AI workflow orchestration connected across live delivery pressure — so that AI-assisted tooling sharpened execution rather than fragmenting it.",
     ],
     outcome: [
       "A more credible and execution-ready product direction.",
       "Sharper UX in areas where trust, speed, and usability needed to coexist.",
-      "Evidence of senior product judgment under real operating pressure.",
+      "Evidence of senior product judgment and AI orchestration thinking inside a live, commercially pressured AI-native product.",
     ],
     liveUrl: "https://www.athaus.ai/en/",
     liveLabel: "View Athaus",

@@ -20,12 +20,12 @@ const cormorant = Cormorant_Garamond({
 const siteUrl = "https://studio.voxdei.io"
 const siteName = "Vox Dei Studio"
 const siteDescription =
-  "Senior product judgment, beautifully executed. Vox Dei Studio is product, design, and engineering in one senior team — for founders and operators building things that have to hold."
+  "Senior product judgment, strategy, and AI-native execution in one senior team. Vox Dei Studio helps founders and operators diagnose friction, shape better products, and build systems that have to hold."
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Vox Dei Studio — Senior product judgment, beautifully executed",
+    default: "Vox Dei Studio — Senior product judgment, strategy, and AI-native execution",
     template: "%s | Vox Dei Studio",
   },
   description: siteDescription,
@@ -42,6 +42,11 @@ export const metadata: Metadata = {
     "South Africa Tech Studio",
     "Boutique Product Agency",
     "Mobile-first Design",
+    "AI Orchestration",
+    "Agent Systems",
+    "AI Strategy Consulting",
+    "Customer Experience Strategy",
+    "Retail Banking Strategy",
   ],
   authors: [{ name: "Vox Dei Studio" }],
   creator: "Vox Dei Studio",
@@ -67,12 +72,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName,
-    title: "Vox Dei Studio — Senior product judgment, beautifully executed",
+    title: "Vox Dei Studio — Senior product judgment, strategy, and AI-native execution",
     description: siteDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vox Dei Studio — Senior product judgment, beautifully executed",
+    title: "Vox Dei Studio — Senior product judgment, strategy, and AI-native execution",
     description: siteDescription,
   },
   alternates: {

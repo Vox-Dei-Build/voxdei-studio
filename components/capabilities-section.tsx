@@ -6,7 +6,7 @@ const capabilities = [
     icon: Brain,
     title: "AI & Automation",
     description:
-      "AI-enabled workflows, WhatsApp commerce systems, and applied intelligence. Real AI that solves business problems.",
+      "AI-enabled workflows, agent systems, orchestration design, and applied intelligence. Real AI that solves business problems.",
   },
   {
     icon: Building2,
@@ -30,13 +30,13 @@ const capabilities = [
     icon: Rocket,
     title: "Venture Building",
     description:
-      "MVP to product-market fit. Skills platforms, AgriTech systems, and commerce products built from zero to production.",
+      "MVP to product-market fit. Strategy, validation, and product builds from zero to production.",
   },
   {
     icon: Shield,
     title: "Technical Leadership",
     description:
-      "Architecture design, team mentorship, and fractional CTO services. Strategic technical guidance and execution.",
+      "Architecture design, team mentorship, fractional CTO support, and senior product judgment. Strategic technical guidance and execution.",
   },
 ]
 
@@ -51,7 +51,7 @@ export function CapabilitiesSection() {
         <div className="mb-16 max-w-3xl" data-aos="fade-up">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4">What We Do</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            From AI-powered ventures to enterprise banking platforms and premium brand experiences — we deliver
+            From strategy and AI orchestration to enterprise banking platforms and premium digital experiences — we deliver
             production systems across the full technical stack.
           </p>
         </div>
