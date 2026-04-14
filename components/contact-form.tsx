@@ -156,30 +156,28 @@ export function ContactForm() {
           <p className="text-[11px] text-brand/80" role="alert">Please complete the verification above.</p>
         )}
 
-        <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
-          {status === "error" ? (
-            <p className="flex items-center gap-2 text-[12px] text-black/60 dark:text-white/60" role="alert">
-              <AlertCircle className="h-3.5 w-3.5 shrink-0 text-brand" />
-              Something went wrong.{" "}
-              <a href="mailto:hello@voxdei.io" className="text-black/70 dark:text-white/70 underline underline-offset-2">
-                hello@voxdei.io
-              </a>
-            </p>
-          ) : (
-            <p className="text-[11px] leading-[1.8] text-black/40 dark:text-white/40">
-              We respond within a few days if there is a fit.
-            </p>
-          )}
+        {status === "error" && (
+          <p className="flex items-center gap-2 text-[12px] text-black/60 dark:text-white/60" role="alert">
+            <AlertCircle className="h-3.5 w-3.5 shrink-0 text-brand" />
+            Something went wrong.{" "}
+            <a href="mailto:hello@voxdei.io" className="text-black/70 dark:text-white/70 underline underline-offset-2">
+              hello@voxdei.io
+            </a>
+          </p>
+        )}
 
-          <button
-            type="submit"
-            disabled={!canSubmit || status === "submitting"}
-            className="inline-flex w-full items-center justify-between gap-3 border border-black/20 dark:border-white/20 px-6 py-3.5 text-[10.5px] uppercase tracking-[0.22em] text-black dark:text-white transition-all duration-200 hover:border-black dark:hover:border-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black disabled:cursor-not-allowed disabled:opacity-25 sm:w-auto sm:justify-start sm:py-3"
-          >
-            {status === "submitting" ? "Sending\u2026" : "Send inquiry"}
-            <ArrowRight className="h-3.5 w-3.5" />
-          </button>
-        </div>
+        <button
+          type="submit"
+          disabled={!canSubmit || status === "submitting"}
+          className="inline-flex w-full items-center justify-center gap-3 bg-black dark:bg-white px-6 py-4 text-[10.5px] uppercase tracking-[0.22em] text-white dark:text-black transition-opacity duration-200 hover:opacity-75 disabled:cursor-not-allowed"
+        >
+          {status === "submitting" ? "Sending\u2026" : "Send inquiry"}
+          <ArrowRight className="h-3.5 w-3.5" />
+        </button>
+
+        <p className="text-center text-[11px] leading-[1.8] text-black/35 dark:text-white/35">
+          We respond within a few days if there is a fit.
+        </p>
       </form>
     </>
   )
