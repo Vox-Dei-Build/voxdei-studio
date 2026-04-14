@@ -60,7 +60,7 @@ export default function Home() {
           </section>
 
           {/* ─── Logo strip — quiet credibility signal ─────────── */}
-          <div className="border-t border-black/6 dark:border-white/6 py-7 sm:py-8" data-aos="fade-up" data-aos-delay="80">
+          <div className="border-t border-black/6 dark:border-white/6 py-7 sm:py-8">
             <div className="overflow-hidden">
               <div className="animate-marquee flex min-w-max items-center gap-14 sm:gap-20">
                 {logoRow.map((logo, index) => (
@@ -314,25 +314,12 @@ export default function Home() {
             <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20 lg:items-start">
               <div data-aos="fade-up">
                 <p className="text-[10px] uppercase tracking-[0.3em] text-brand mb-6">Start here</p>
-                <h2 className="text-[2rem] font-medium leading-[0.95] tracking-[-0.045em] sm:text-[2.8rem] lg:text-[3.4rem]">
+                <h2 className="text-[2rem] font-medium leading-[0.95] tracking-[-0.045em] sm:text-[2.8rem] lg:text-[3.2rem]">
                   Bring the product,
                   <span className="block font-display-serif font-light italic text-black/35 dark:text-white/35 mt-1">
                     strategy, or operating problem that actually matters.
                   </span>
                 </h2>
-                <div className="mt-8 h-px w-16 bg-brand/30" aria-hidden="true" />
-                <p className="mt-7 max-w-xs text-[13px] leading-[1.9] text-black/60 dark:text-white/60">
-                  Use the form to open a conversation. Bring a product, a strategy question, or an AI orchestration problem. We respond within a few days if there is a fit.
-                </p>
-                <a
-                  href="https://www.voxdei.io/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group mt-7 inline-flex items-center gap-2 text-[10.5px] uppercase tracking-[0.2em] text-black/35 dark:text-white/35 transition-colors hover:text-black dark:hover:text-white"
-                >
-                  Read our journal
-                  <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
-                </a>
               </div>
 
               <div data-aos="fade-up" data-aos-delay="60">
